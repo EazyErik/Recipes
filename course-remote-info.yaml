@@ -7,10 +7,10 @@ update_date: "Sun, 22 Oct 2023 12:23:00 UTC"
 stages:
   - id: 917
     step: 13088
-    is_completed: false
+    is_completed: true
   - id: 918
     step: 13089
-    is_completed: false
+    is_completed: true
   - id: 919
     step: 13090
     is_completed: false

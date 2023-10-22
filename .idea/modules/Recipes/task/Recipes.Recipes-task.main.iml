@@ -6,6 +6,7 @@
     <content url="file://$MODULE_DIR$/../../../../Recipes/task/src">
       <sourceFolder url="file://$MODULE_DIR$/../../../../Recipes/task/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../../../Recipes/task/src/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../../Recipes/task/src/generated" isTestSource="false" generated="true" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

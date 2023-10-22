@@ -308,6 +308,147 @@ files:
           }
       }
     learner_created: false
+  - name: src/recipes/Service.java
+    visible: true
+    text: |
+      package recipes;
+      
+      import lombok.AllArgsConstructor;
+      import lombok.Data;
+      import lombok.NoArgsConstructor;
+      import org.springframework.stereotype.Component;
+      
+      import java.util.ArrayList;
+      import java.util.List;
+      import java.util.stream.Collectors;
+      import java.util.stream.Stream;
+      
+      @Component
+      @AllArgsConstructor
+      @NoArgsConstructor
+      @Data
+      public class Service {
+      
+          private List<Recipe> recipes = new ArrayList<>();
+      
+          private RecipeDTO recipeConverterToDTO(Recipe recipe){
+              return new RecipeDTO(recipe.getName(),recipe.getDescription(),recipe.getIngredients(),recipe.getDirections());
+      
+          }
+      
+          private Recipe recipeDTOConverterToRecipe(RecipeDTO recipeDTO,int id){
+              return new Recipe(id,recipeDTO.getName(),recipeDTO.getDescription(),recipeDTO.getIngredients(),recipeDTO.getDirections());
+          }
+      
+          public RecipeDTO getRecipeById(int id){
+              List<Recipe> optionalRecipes = recipes.stream().filter(recipe -> id == recipe.getId()).collect(Collectors.toList());
+              return optionalRecipes.size() > 0 ? recipeConverterToDTO(optionalRecipes.get(0)) : null;
+      
+          }
+      
+          public IdDTO addNewRecipe(RecipeDTO recipe){
+              int id = recipes.size() + 1;
+              recipes.add(recipeDTOConverterToRecipe(recipe,id));
+              return new IdDTO(id);
+          }
+      
+      }
+    learner_created: true
+  - name: src/recipes/IdDTO.java
+    visible: true
+    text: |
+      package recipes;
+      
+      import lombok.AllArgsConstructor;
+      import lombok.Data;
+      import lombok.NoArgsConstructor;
+      
+      @Data
+      @AllArgsConstructor
+      @NoArgsConstructor
+      public class IdDTO {
+          private int id;
+      }
+    learner_created: true
+  - name: src/recipes/Recipe.java
+    visible: true
+    text: |
+      package recipes;
+      
+      import lombok.AllArgsConstructor;
+      import lombok.Data;
+      import lombok.NoArgsConstructor;
+      
+      import java.util.List;
+      
+      @Data
+      @AllArgsConstructor
+      @NoArgsConstructor
+      public class Recipe {
+          private int id;
+          private String name;
+          private String description;
+          private List<String> ingredients;
+          private List<String> directions;
+      }
+    learner_created: true
+  - name: src/recipes/RecipeDTO.java
+    visible: true
+    text: |
+      package recipes;
+      
+      import lombok.AllArgsConstructor;
+      import lombok.Data;
+      import lombok.NoArgsConstructor;
+      
+      import java.util.List;
+      
+      @Data
+      @AllArgsConstructor
+      @NoArgsConstructor
+      public class RecipeDTO {
+      
+          private String name;
+          private String description;
+          private List<String> ingredients;
+          private List<String> directions;
+      
+      }
+    learner_created: true
+  - name: src/recipes/Controller.java
+    visible: true
+    text: |
+      package recipes;
+      
+      import org.springframework.beans.factory.annotation.Autowired;
+      import org.springframework.http.HttpStatus;
+      import org.springframework.http.ResponseEntity;
+      import org.springframework.web.bind.annotation.*;
+      
+      @RestController
+      @RequestMapping("/api")
+      public class Controller {
+      
+          @Autowired
+          Service service;
+      
+          @PostMapping("/recipe/new")
+          public ResponseEntity<IdDTO> addRecipe(@RequestBody RecipeDTO recipeDTO){
+      
+              return new ResponseEntity<IdDTO>( service.addNewRecipe(recipeDTO),HttpStatus.OK);
+          }
+      
+          @GetMapping("/recipe/{id}")
+          public ResponseEntity<RecipeDTO> getRecipeById(@PathVariable int id){
+              RecipeDTO recipe = service.getRecipeById(id);
+              if(recipe != null){
+                  return new ResponseEntity<>(recipe,HttpStatus.OK);
+              }else{
+                 return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+              }
+          }
+      }
+    learner_created: true
 feedback_link: https://hyperskill.org/learn/step/13090#comment
 status: Unchecked
 record: -1

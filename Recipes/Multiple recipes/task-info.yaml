@@ -193,6 +193,84 @@ files:
           }
       }
     learner_created: false
+  - name: src/recipes/Service.java
+    visible: true
+    text: |
+      package recipes;
+      
+      import lombok.AllArgsConstructor;
+      import lombok.Data;
+      import lombok.NoArgsConstructor;
+      import org.springframework.stereotype.Component;
+      
+      @Component
+      @AllArgsConstructor
+      @NoArgsConstructor
+      @Data
+      public class Service {
+      
+          private Recipe recipe;
+      
+      }
+    learner_created: true
+  - name: src/recipes/Recipe.java
+    visible: true
+    text: |
+      package recipes;
+      
+      import lombok.AllArgsConstructor;
+      import lombok.Data;
+      import lombok.NoArgsConstructor;
+      
+      @Data
+      @AllArgsConstructor
+      @NoArgsConstructor
+      public class Recipe {
+          private String name;
+          private String description;
+          private String ingredients;
+          private String directions;
+      }
+    learner_created: true
+  - name: src/recipes/Controller.java
+    visible: true
+    text: |
+      package recipes;
+      
+      import org.springframework.beans.factory.annotation.Autowired;
+      import org.springframework.http.HttpStatus;
+      import org.springframework.http.ResponseEntity;
+      import org.springframework.web.bind.annotation.*;
+      
+      @RestController
+      @RequestMapping("/api")
+      public class Controller {
+      
+          @Autowired
+          Service service;
+      
+          @PostMapping("/recipe")
+          public void addRecipe(@RequestBody Recipe recipe){
+              service.setRecipe(recipe);
+          }
+      
+          @GetMapping("/recipe")
+          public ResponseEntity<Recipe> getRecipe(){
+              ResponseEntity<Recipe> responseEntity = new ResponseEntity<>(service.getRecipe(),HttpStatus.OK);
+      
+              return responseEntity;
+          }
+      }
+    learner_created: true
+  - name: src/recipes/RecipeDTO.java
+    visible: true
+    learner_created: true
+  - name: src/recipes/IdDTO.java
+    visible: true
+    learner_created: true
 feedback_link: https://hyperskill.org/learn/step/13089#comment
-status: Unchecked
-record: -1
+status: Solved
+feedback:
+  message: Congratulations!
+  time: "Sun, 22 Oct 2023 14:52:34 UTC"
+record: 2
