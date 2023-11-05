@@ -3,7 +3,7 @@ hyperskill_project:
   ide_files: https://cogniterra.org/media/attachments/lesson/25525/additional_files.json
   is_template_based: false
   use_ide: true
-update_date: "Sun, 29 Oct 2023 13:18:53 UTC"
+update_date: "Sun, 05 Nov 2023 12:56:58 UTC"
 stages:
   - id: 917
     step: 13088
@@ -194,10 +194,10 @@ topics:
       theory_id: 8504
     - title: Frameworks
       theory_id: 6701
-    - title: What is a bug
-      theory_id: 5504
     - title: The concept of patterns
       theory_id: 3611
+    - title: What is a bug
+      theory_id: 5504
     - title: Functional testing
       theory_id: 13438
     - title: Unit testing
@@ -374,14 +374,14 @@ topics:
       theory_id: 3680
     - title: Regexes in programs
       theory_id: 3696
+    - title: Object-Relational Mapping (ORM)
+      theory_id: 8312
     - title: The NULL value
       theory_id: 7907
     - title: Special WHERE operators
       theory_id: 10521
     - title: Intro to MySQL
       theory_id: 16662
-    - title: Object-Relational Mapping (ORM)
-      theory_id: 8312
     - title: Introduction to JPA
       theory_id: 17125
     - title: Introduction to transactions

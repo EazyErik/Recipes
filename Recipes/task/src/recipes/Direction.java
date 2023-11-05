@@ -15,7 +15,13 @@ public class Direction {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String name;
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn
     private Recipe recipe;
+
+
+    public Direction(String name, Recipe recipe) {
+        this.name = name;
+        this.recipe = recipe;
+    }
 }
