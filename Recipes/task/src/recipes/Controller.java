@@ -5,6 +5,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+import java.util.Optional;
+
 @RestController
 @RequestMapping("/api")
 public class Controller {
@@ -15,17 +18,50 @@ public class Controller {
     @PostMapping("/recipe/new")
     public ResponseEntity<IdDTO> addRecipe(@RequestBody RecipeDTO recipeDTO){
         System.out.println(recipeDTO.getName() + "," + recipeDTO.getDescription());
+        System.out.println(recipeDTO.getDirections() +" ," + recipeDTO.getIngredients());
 
-        if(recipeDTO.getName() == null || recipeDTO.getDescription() == null ||
-                recipeDTO.getDirections() == null
-            || recipeDTO.getIngredients() == null ||
-                recipeDTO.getName().isEmpty() || recipeDTO.getDescription().isEmpty()){
+        if (
+                recipeDTO.getName() == null ||
+                        recipeDTO.getName().isBlank() ||
+                        recipeDTO.getDescription() == null ||
+                        recipeDTO.getDirections() == null ||
+                        recipeDTO.getDescription().isBlank() ||
+                        recipeDTO.getIngredients() == null ||
+                        recipeDTO.getIngredients().isEmpty() ||
+                        recipeDTO.getDirections().isEmpty() ||
+                        recipeDTO.getCategory() == null ||
+                        recipeDTO.getCategory().isBlank()
+        ) {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
 
         return new ResponseEntity<IdDTO>( service.addNewRecipe(recipeDTO),HttpStatus.OK);
 
-//todo:POST /api/recipe/new should respond with status code 400, responded: 200
+
+    }
+
+    @PutMapping("/recipe/{id}")
+    public ResponseEntity<Void> updateRecipe(@PathVariable int id,@RequestBody RecipeDTO recipeDTO){
+        if (
+                recipeDTO.getName() == null ||
+                        recipeDTO.getName().isBlank() ||
+                        recipeDTO.getDescription() == null ||
+                        recipeDTO.getDirections() == null ||
+                        recipeDTO.getDescription().isBlank() ||
+                        recipeDTO.getIngredients() == null ||
+                        recipeDTO.getIngredients().isEmpty() ||
+                        recipeDTO.getDirections().isEmpty() ||
+                        recipeDTO.getCategory() == null ||
+                        recipeDTO.getCategory().isBlank()
+        ) {
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
+        RecipeDTO updatedRecipe = service.updateRecipe(id, recipeDTO);
+        if(updatedRecipe == null){
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+
     }
 
     @GetMapping("/recipe/{id}")
@@ -36,6 +72,20 @@ public class Controller {
         }else{
            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
+    }
+
+    @GetMapping("/recipe/search")
+    public ResponseEntity<List<RecipeDTO>>getRecipes(@RequestParam String name, @RequestParam String category){
+        boolean invalidName = name == null || name.isBlank();
+        boolean invalidCategory = category == null || category.isBlank();
+
+        if (invalidName && invalidCategory){
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
+        if(!invalidName && !invalidCategory ){
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
+        return new ResponseEntity<>(service.filter(name,category),HttpStatus.OK);
     }
 
     @DeleteMapping("/recipe/{id}")

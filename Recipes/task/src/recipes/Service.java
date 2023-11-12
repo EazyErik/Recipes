@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -27,7 +28,13 @@ public class Service {
     IngredientRepository ingredientRepository;
 
     private RecipeDTO recipeConverterToDTO(Recipe recipe){
-     return new RecipeDTO(recipe.getName(),recipe.getDescription(),convertIngredientToString(recipe.getIngredients()),convertDirectionToString(recipe.getDirections()));
+     return new RecipeDTO(
+             recipe.getName(),
+             recipe.getDescription(),
+             convertIngredientToString(recipe.getIngredients()),
+             convertDirectionToString(recipe.getDirections()),
+             recipe.getCategory(),
+             recipe.getDate());
 
     }
     private List<String> convertIngredientToString(List<Ingredient> ingredients){
@@ -48,10 +55,9 @@ public class Service {
 
 
 
-    private Recipe recipeDTOConverterToRecipe(RecipeDTO recipeDTO){
-        return new Recipe(recipeDTO.getName(),recipeDTO.getDescription());
+    private Recipe recipeDTOConverterToRecipe(RecipeDTO recipeDTO) {
+        return new Recipe(recipeDTO.getName(), recipeDTO.getDescription(), recipeDTO.getCategory(), LocalDateTime.now());
 
-        //return new Recipe(recipeDTO.getName(),recipeDTO.getDescription(),convertStringToIngredient(recipeDTO.getIngredients()),convertStringToDirection(recipeDTO.getDirections()));
     }
 
     private List<Ingredient> convertStringToIngredient(List<String> strings,Recipe recipe){
@@ -86,6 +92,47 @@ public class Service {
 
 
     }
+    public List<Recipe> getAllRecipes(){
+        Iterable<Recipe> recipes = recipeRepository.findAll();
+        List<Recipe> list = new ArrayList<>();
+        recipes.forEach(list::add);
+        return list;
+    }
+
+    public List<RecipeDTO>filter(String name,String category){
+        List<Recipe> recipes = getAllRecipes();
+        List<Recipe> filteredRecipes = new ArrayList<>();
+        List<RecipeDTO>finalResults = new ArrayList<>();
+        if(name != null && !name.isBlank()){
+           filteredRecipes.addAll(filterByName(name, recipes));
+        }else if(category != null && !category.isBlank()){
+            filteredRecipes.addAll(filterByCategory(category,recipes));
+        }
+        for(Recipe recipe : filteredRecipes){
+            finalResults.add(recipeConverterToDTO(recipe));
+        }
+       return finalResults;
+    }
+    public List<Recipe> filterByName(String name,List<Recipe> recipes){
+        List<Recipe>results = new ArrayList<>();
+        for(Recipe recipe : recipes){
+            if(recipe.getName().toLowerCase().contains(name.toLowerCase())){
+                results.add(recipe);
+            }
+        }
+        return results;
+
+    }
+
+    public List<Recipe> filterByCategory(String category, List<Recipe> recipes){
+        List<Recipe>results = new ArrayList<>();
+        for(Recipe recipe : recipes){
+            if(recipe.getCategory().toLowerCase().equals(category.toLowerCase())){
+                results.add(recipe);
+            }
+        }
+        return results;
+    }
 
     public IdDTO addNewRecipe(RecipeDTO recipe){
 
@@ -113,5 +160,20 @@ public class Service {
         }
         recipeRepository.deleteById(id);
         return true;
+    }
+
+    public RecipeDTO updateRecipe(int id,RecipeDTO recipeDTO) {
+        System.out.println(recipeDTO.getIngredients());
+        RecipeDTO recipeToUpdate = getRecipeById(id);
+        if(recipeToUpdate == null){
+            return null;
+        }
+        recipeDTO.setDate(LocalDateTime.now());
+
+        Recipe recipe = recipeDTOConverterToRecipe(recipeDTO);
+        recipe.setId(id);
+        // todo:update ingredients and directions in database aswell because they are in separate tables
+        recipeRepository.save(recipe);
+        return recipeDTO;
     }
 }
