@@ -18,6 +18,28 @@
             <option value="$PROJECT_DIR$/Recipes/task/build/reports/tests" />
             <option value="$PROJECT_DIR$/Recipes/task/build/test-results" />
             <option value="$PROJECT_DIR$/Recipes/task/build/tmp" />
+            <option value="$PROJECT_DIR$/Topics/Custom threads/Multiple threads" />
+            <option value="$PROJECT_DIR$/Topics/Custom threads/Starting runnables" />
+            <option value="$PROJECT_DIR$/Topics/Custom threads/Statements" />
+            <option value="$PROJECT_DIR$/Topics/Custom threads/Statements about starting threads" />
+            <option value="$PROJECT_DIR$/Topics/Custom threads/Theory" />
+            <option value="$PROJECT_DIR$/Topics/Custom threads/When will a thread start performing a task" />
+            <option value="$PROJECT_DIR$/Topics/Custom threads/Writing a thread for printing numbers" />
+            <option value="$PROJECT_DIR$/Topics/Data Transfer Object in Spring/Converting a DTO to a Java class implementation" />
+            <option value="$PROJECT_DIR$/Topics/Data Transfer Object in Spring/DTO advantages" />
+            <option value="$PROJECT_DIR$/Topics/Data Transfer Object in Spring/DTO definition" />
+            <option value="$PROJECT_DIR$/Topics/Data Transfer Object in Spring/DTO implementation with a Java record" />
+            <option value="$PROJECT_DIR$/Topics/Data Transfer Object in Spring/The purposes of ModelMapper" />
+            <option value="$PROJECT_DIR$/Topics/Data Transfer Object in Spring/Theory" />
+            <option value="$PROJECT_DIR$/Topics/Thread management/Calculate the number of distinct characters" />
+            <option value="$PROJECT_DIR$/Topics/Thread management/Join" />
+            <option value="$PROJECT_DIR$/Topics/Thread management/Ordering the execution of threads" />
+            <option value="$PROJECT_DIR$/Topics/Thread management/Sleep" />
+            <option value="$PROJECT_DIR$/Topics/Thread management/Theory" />
+            <option value="$PROJECT_DIR$/Topics/Thread management/VeganPizza" />
+            <option value="$PROJECT_DIR$/Topics/Threads as objects/Is thread daemon" />
+            <option value="$PROJECT_DIR$/Topics/Threads as objects/The implementation of threads" />
+            <option value="$PROJECT_DIR$/Topics/Threads as objects/Theory" />
             <option value="$PROJECT_DIR$/util" />
           </set>
         </option>

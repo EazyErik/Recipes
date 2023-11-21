@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="RecipesApplicationTest" tests="1" skipped="0" failures="1" errors="0" timestamp="2023-11-12T15:21:17" hostname="MacBook-Pro-von-erik.local" time="13.078">
+<testsuite name="RecipesApplicationTest" tests="1" skipped="0" failures="1" errors="0" timestamp="2023-11-19T15:12:07" hostname="MacBook-Pro-von-erik.local" time="13.189">
   <properties/>
-  <testcase name="start" classname="RecipesApplicationTest" time="13.078">
-    <failure message="java.lang.AssertionError: Wrong answer in test #9&#10;&#10;The JSON element at path &quot;/ingredients/0&quot; should equal to &quot;1 inch ginger root, minced&quot;, found &quot;boiled water&quot;&#10;&#10;Full JSON:&#10;{&#10;  &quot;name&quot;: &quot;Warming Ginger Tea /Test&quot;,&#10;  &quot;description&quot;: &quot;Ginger tea is a warming drink for cool weather, ... /Test&quot;,&#10;  &quot;ingredients&quot;: [&#10;    &quot;boiled water&quot;,&#10;    &quot;honey&quot;,&#10;    &quot;fresh mint leaves /Test&quot;&#10;  ],&#10;  &quot;directions&quot;: [&#10;    &quot;Boil water&quot;,&#10;    &quot;Pour boiling hot water into a mug&quot;,&#10;    &quot;Add fresh mint leaves&quot;,&#10;    &quot;Mix and let the mint leaves seep for 3-5 minutes&quot;,&#10;    &quot;Add honey and mix again /Test&quot;&#10;  ],&#10;  &quot;category&quot;: &quot;beverage /Test&quot;,&#10;  &quot;date&quot;: &quot;2023-11-12T16:21:30.880963&quot;&#10;}" type="java.lang.AssertionError">java.lang.AssertionError: Wrong answer in test #9
+  <testcase name="start" classname="RecipesApplicationTest" time="13.189">
+    <failure message="java.lang.AssertionError: Wrong answer in test #9&#10;&#10;The JSON object at key ingredients has an incorrect length: should be equal to 3, found 6&#10;&#10;Full JSON:&#10;{&#10;  &quot;name&quot;: &quot;Warming Ginger Tea /Test&quot;,&#10;  &quot;description&quot;: &quot;Ginger tea is a warming drink for cool weather, ... /Test&quot;,&#10;  &quot;ingredients&quot;: [&#10;    &quot;boiled water&quot;,&#10;    &quot;honey&quot;,&#10;    &quot;fresh mint leaves /Test&quot;,&#10;    &quot;1 inch ginger root, minced&quot;,&#10;    &quot;1/2 lemon, juiced&quot;,&#10;    &quot;1/2 teaspoon manuka honey /Test&quot;&#10;  ],&#10;  &quot;directions&quot;: [&#10;    &quot;Boil water&quot;,&#10;    &quot;Pour boiling hot water into a mug&quot;,&#10;    &quot;Add fresh mint leaves&quot;,&#10;    &quot;Mix and let the mint leaves seep for 3-5 minutes&quot;,&#10;    &quot;Place all ingredients in a mug and fill with warm water (not too hot so you keep the beneficial honey compounds in tact)&quot;,&#10;    &quot;Steep for 5-10 minutes&quot;,&#10;    &quot;Drink and enjoy /Test&quot;&#10;  ],&#10;  &quot;category&quot;: &quot;beverage /Test&quot;,&#10;  &quot;date&quot;: &quot;2023-11-19T16:12:20.147911&quot;&#10;}" type="java.lang.AssertionError">java.lang.AssertionError: Wrong answer in test #9
 
-The JSON element at path &quot;/ingredients/0&quot; should equal to &quot;1 inch ginger root, minced&quot;, found &quot;boiled water&quot;
+The JSON object at key ingredients has an incorrect length: should be equal to 3, found 6
 
 Full JSON:
 {
@@ -13,17 +13,22 @@ Full JSON:
   &quot;ingredients&quot;: [
     &quot;boiled water&quot;,
     &quot;honey&quot;,
-    &quot;fresh mint leaves /Test&quot;
+    &quot;fresh mint leaves /Test&quot;,
+    &quot;1 inch ginger root, minced&quot;,
+    &quot;1/2 lemon, juiced&quot;,
+    &quot;1/2 teaspoon manuka honey /Test&quot;
   ],
   &quot;directions&quot;: [
     &quot;Boil water&quot;,
     &quot;Pour boiling hot water into a mug&quot;,
     &quot;Add fresh mint leaves&quot;,
     &quot;Mix and let the mint leaves seep for 3-5 minutes&quot;,
-    &quot;Add honey and mix again /Test&quot;
+    &quot;Place all ingredients in a mug and fill with warm water (not too hot so you keep the beneficial honey compounds in tact)&quot;,
+    &quot;Steep for 5-10 minutes&quot;,
+    &quot;Drink and enjoy /Test&quot;
   ],
   &quot;category&quot;: &quot;beverage /Test&quot;,
-  &quot;date&quot;: &quot;2023-11-12T16:21:30.880963&quot;
+  &quot;date&quot;: &quot;2023-11-19T16:12:20.147911&quot;
 }
 	at org.junit.Assert.fail(Assert.java:89)
 	at org.hyperskill.hstest.stage.StageTest.start(StageTest.java:203)
@@ -84,38 +89,38 @@ Start test 1?[0m
 ?[0m?[0;34m =========|_|==============|___/=/_/_/_/
 ?[0m?[0;34m :: Spring Boot ::                (v2.5.6)
 ?[0m?[0;34m
-?[0m?[0;34m2023-11-12 16:21:18.097  INFO 16071 --- [    Test worker] recipes.RecipesApplication               : Starting RecipesApplication using Java 17.0.8.1 on MacBook-Pro-von-erik.local with PID 16071 (started by erikbusch in /Users/erikbusch/IdeaProjects/Recipes/Recipes/task)
-?[0m?[0;34m2023-11-12 16:21:18.099  INFO 16071 --- [    Test worker] recipes.RecipesApplication               : No active profile set, falling back to default profiles: default
-?[0m?[0;34m2023-11-12 16:21:18.464  INFO 16071 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
-?[0m?[0;34m2023-11-12 16:21:18.464  INFO 16071 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
-?[0m?[0;34m2023-11-12 16:21:18.476  INFO 16071 --- [    Test worker] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface recipes.DirectionRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-?[0m?[0;34m2023-11-12 16:21:18.477  INFO 16071 --- [    Test worker] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface recipes.IngredientRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-?[0m?[0;34m2023-11-12 16:21:18.477  INFO 16071 --- [    Test worker] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface recipes.RecipeRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-?[0m?[0;34m2023-11-12 16:21:18.477  INFO 16071 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11 ms. Found 0 JDBC repository interfaces.
-?[0m?[0;34m2023-11-12 16:21:18.481  INFO 16071 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
-?[0m?[0;34m2023-11-12 16:21:18.482  INFO 16071 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-?[0m?[0;34m2023-11-12 16:21:18.495  INFO 16071 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10 ms. Found 3 JPA repository interfaces.
-?[0m?[0;34m2023-11-12 16:21:18.734  INFO 16071 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8881 (http)
-?[0m?[0;34m2023-11-12 16:21:18.739  INFO 16071 --- [    Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-?[0m?[0;34m2023-11-12 16:21:18.739  INFO 16071 --- [    Test worker] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.54]
-?[0m?[0;34m2023-11-12 16:21:18.784  INFO 16071 --- [    Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-?[0m?[0;34m2023-11-12 16:21:18.784  INFO 16071 --- [    Test worker] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 665 ms
-?[0m?[0;34m2023-11-12 16:21:18.843  INFO 16071 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-?[0m?[0;34m2023-11-12 16:21:18.917  INFO 16071 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-?[0m?[0;34m2023-11-12 16:21:18.921  INFO 16071 --- [    Test worker] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:../recipes_db'
-?[0m?[0;34m2023-11-12 16:21:19.007  INFO 16071 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-?[0m?[0;34m2023-11-12 16:21:19.029  INFO 16071 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
-?[0m?[0;34m2023-11-12 16:21:19.093  INFO 16071 --- [    Test worker] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-?[0m?[0;34m2023-11-12 16:21:19.143  INFO 16071 --- [    Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-?[0m?[0;34m2023-11-12 16:21:19.455  INFO 16071 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-?[0m?[0;34m2023-11-12 16:21:19.458  INFO 16071 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-?[0m?[0;34m2023-11-12 16:21:19.586  WARN 16071 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-?[0m?[0;34m2023-11-12 16:21:19.820  INFO 16071 --- [    Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/actuator'
-?[0m?[0;34m2023-11-12 16:21:19.838  INFO 16071 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8881 (http) with context path ''
-?[0m?[0;34m2023-11-12 16:21:19.846  INFO 16071 --- [    Test worker] recipes.RecipesApplication               : Started RecipesApplication in 1.897 seconds (JVM running for 2.281)
-?[0;34m2023-11-12 16:21:20.014  INFO 16071 --- [nio-8881-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-?[0m?[0;34m2023-11-12 16:21:20.014  INFO 16071 --- [nio-8881-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-?[0m?[0;34m2023-11-12 16:21:20.015  INFO 16071 --- [nio-8881-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+?[0m?[0;34m2023-11-19 16:12:07.317  INFO 15652 --- [    Test worker] recipes.RecipesApplication               : Starting RecipesApplication using Java 17.0.8.1 on MacBook-Pro-von-erik.local with PID 15652 (started by erikbusch in /Users/erikbusch/IdeaProjects/Recipes/Recipes/task)
+?[0m?[0;34m2023-11-19 16:12:07.318  INFO 15652 --- [    Test worker] recipes.RecipesApplication               : No active profile set, falling back to default profiles: default
+?[0m?[0;34m2023-11-19 16:12:07.674  INFO 15652 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+?[0m?[0;34m2023-11-19 16:12:07.674  INFO 15652 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+?[0m?[0;34m2023-11-19 16:12:07.685  INFO 15652 --- [    Test worker] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface recipes.DirectionRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+?[0m?[0;34m2023-11-19 16:12:07.685  INFO 15652 --- [    Test worker] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface recipes.IngredientRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+?[0m?[0;34m2023-11-19 16:12:07.686  INFO 15652 --- [    Test worker] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface recipes.RecipeRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+?[0m?[0;34m2023-11-19 16:12:07.686  INFO 15652 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10 ms. Found 0 JDBC repository interfaces.
+?[0m?[0;34m2023-11-19 16:12:07.691  INFO 15652 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+?[0m?[0;34m2023-11-19 16:12:07.691  INFO 15652 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+?[0m?[0;34m2023-11-19 16:12:07.702  INFO 15652 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8 ms. Found 3 JPA repository interfaces.
+?[0m?[0;34m2023-11-19 16:12:07.927  INFO 15652 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8881 (http)
+?[0m?[0;34m2023-11-19 16:12:07.932  INFO 15652 --- [    Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+?[0m?[0;34m2023-11-19 16:12:07.932  INFO 15652 --- [    Test worker] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.54]
+?[0m?[0;34m2023-11-19 16:12:07.972  INFO 15652 --- [    Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+?[0m?[0;34m2023-11-19 16:12:07.972  INFO 15652 --- [    Test worker] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 634 ms
+?[0m?[0;34m2023-11-19 16:12:08.027  INFO 15652 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+?[0m?[0;34m2023-11-19 16:12:08.099  INFO 15652 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+?[0m?[0;34m2023-11-19 16:12:08.102  INFO 15652 --- [    Test worker] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:../recipes_db'
+?[0m?[0;34m2023-11-19 16:12:08.178  INFO 15652 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+?[0m?[0;34m2023-11-19 16:12:08.202  INFO 15652 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+?[0m?[0;34m2023-11-19 16:12:08.258  INFO 15652 --- [    Test worker] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+?[0m?[0;34m2023-11-19 16:12:08.303  INFO 15652 --- [    Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+?[0m?[0;34m2023-11-19 16:12:08.590  INFO 15652 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+?[0m?[0;34m2023-11-19 16:12:08.594  INFO 15652 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+?[0m?[0;34m2023-11-19 16:12:08.769  WARN 15652 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+?[0m?[0;34m2023-11-19 16:12:09.008  INFO 15652 --- [    Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/actuator'
+?[0m?[0;34m2023-11-19 16:12:09.025  INFO 15652 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8881 (http) with context path ''
+?[0m?[0;34m2023-11-19 16:12:09.033  INFO 15652 --- [    Test worker] recipes.RecipesApplication               : Started RecipesApplication in 1.869 seconds (JVM running for 2.252)
+?[0;34m2023-11-19 16:12:09.202  INFO 15652 --- [nio-8881-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+?[0m?[0;34m2023-11-19 16:12:09.202  INFO 15652 --- [nio-8881-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+?[0m?[0;34m2023-11-19 16:12:09.203  INFO 15652 --- [nio-8881-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
 ?[0m?[0;34mFresh Mint Tea /Test,Light, aromatic and refreshing beverage, ... /Test
 ?[0m?[0;34m[Boil water, Pour boiling hot water into a mug, Add fresh mint leaves, Mix and let the mint leaves seep for 3-5 minutes, Add honey and mix again /Test] ,[boiled water, honey, fresh mint leaves /Test]
 ?[0m?[1;31m
@@ -128,9 +133,9 @@ Start test 3?[0m
 Start test 4?[0m
 ?[1;31m
 Start test 5?[0m
-?[0;34m2023-11-12 16:21:20.671  INFO 16071 --- [       Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-?[0m?[0;34m2023-11-12 16:21:20.673  INFO 16071 --- [       Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-?[0m?[0;34m2023-11-12 16:21:20.751  INFO 16071 --- [       Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+?[0;34m2023-11-19 16:12:09.874  INFO 15652 --- [       Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+?[0m?[0;34m2023-11-19 16:12:09.876  INFO 15652 --- [       Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+?[0m?[0;34m2023-11-19 16:12:09.930  INFO 15652 --- [       Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
 ?[0;34m
 ?[0m?[0;34m  .   ____          _            __ _ _
 ?[0m?[0;34m /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -140,42 +145,44 @@ Start test 5?[0m
 ?[0m?[0;34m =========|_|==============|___/=/_/_/_/
 ?[0m?[0;34m :: Spring Boot ::                (v2.5.6)
 ?[0m?[0;34m
-?[0m?[0;34m2023-11-12 16:21:30.549  INFO 16071 --- [    Test worker] recipes.RecipesApplication               : Starting RecipesApplication using Java 17.0.8.1 on MacBook-Pro-von-erik.local with PID 16071 (started by erikbusch in /Users/erikbusch/IdeaProjects/Recipes/Recipes/task)
-?[0m?[0;34m2023-11-12 16:21:30.550  INFO 16071 --- [    Test worker] recipes.RecipesApplication               : No active profile set, falling back to default profiles: default
-?[0m?[0;34m2023-11-12 16:21:30.634  INFO 16071 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
-?[0m?[0;34m2023-11-12 16:21:30.635  INFO 16071 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
-?[0m?[0;34m2023-11-12 16:21:30.636  INFO 16071 --- [    Test worker] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface recipes.DirectionRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-?[0m?[0;34m2023-11-12 16:21:30.636  INFO 16071 --- [    Test worker] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface recipes.IngredientRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-?[0m?[0;34m2023-11-12 16:21:30.636  INFO 16071 --- [    Test worker] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface recipes.RecipeRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-?[0m?[0;34m2023-11-12 16:21:30.636  INFO 16071 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1 ms. Found 0 JDBC repository interfaces.
-?[0m?[0;34m2023-11-12 16:21:30.637  INFO 16071 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
-?[0m?[0;34m2023-11-12 16:21:30.637  INFO 16071 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-?[0m?[0;34m2023-11-12 16:21:30.640  INFO 16071 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 2 ms. Found 3 JPA repository interfaces.
-?[0m?[0;34m2023-11-12 16:21:30.673  INFO 16071 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8881 (http)
-?[0m?[0;34m2023-11-12 16:21:30.673  INFO 16071 --- [    Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-?[0m?[0;34m2023-11-12 16:21:30.673  INFO 16071 --- [    Test worker] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.54]
-?[0m?[0;34m2023-11-12 16:21:30.681  INFO 16071 --- [    Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-?[0m?[0;34m2023-11-12 16:21:30.682  INFO 16071 --- [    Test worker] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 131 ms
-?[0m?[0;34m2023-11-12 16:21:30.698  INFO 16071 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
-?[0m?[0;34m2023-11-12 16:21:30.702  INFO 16071 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
-?[0m?[0;34m2023-11-12 16:21:30.702  INFO 16071 --- [    Test worker] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:../recipes_db'
-?[0m?[0;34m2023-11-12 16:21:30.718  INFO 16071 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-?[0m?[0;34m2023-11-12 16:21:30.720  INFO 16071 --- [    Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-?[0m?[0;34m2023-11-12 16:21:30.762  INFO 16071 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-?[0m?[0;34m2023-11-12 16:21:30.762  INFO 16071 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-?[0m?[0;34m2023-11-12 16:21:30.789  WARN 16071 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-?[0m?[0;34m2023-11-12 16:21:30.850  INFO 16071 --- [    Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/actuator'
-?[0m?[0;34m2023-11-12 16:21:30.856  INFO 16071 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8881 (http) with context path ''
-?[0m?[0;34m2023-11-12 16:21:30.860  INFO 16071 --- [    Test worker] recipes.RecipesApplication               : Started RecipesApplication in 0.328 seconds (JVM running for 13.294)
+?[0m?[0;34m2023-11-19 16:12:19.781  INFO 15652 --- [    Test worker] recipes.RecipesApplication               : Starting RecipesApplication using Java 17.0.8.1 on MacBook-Pro-von-erik.local with PID 15652 (started by erikbusch in /Users/erikbusch/IdeaProjects/Recipes/Recipes/task)
+?[0m?[0;34m2023-11-19 16:12:19.781  INFO 15652 --- [    Test worker] recipes.RecipesApplication               : No active profile set, falling back to default profiles: default
+?[0m?[0;34m2023-11-19 16:12:19.884  INFO 15652 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+?[0m?[0;34m2023-11-19 16:12:19.885  INFO 15652 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+?[0m?[0;34m2023-11-19 16:12:19.886  INFO 15652 --- [    Test worker] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface recipes.DirectionRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+?[0m?[0;34m2023-11-19 16:12:19.886  INFO 15652 --- [    Test worker] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface recipes.IngredientRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+?[0m?[0;34m2023-11-19 16:12:19.886  INFO 15652 --- [    Test worker] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface recipes.RecipeRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+?[0m?[0;34m2023-11-19 16:12:19.886  INFO 15652 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1 ms. Found 0 JDBC repository interfaces.
+?[0m?[0;34m2023-11-19 16:12:19.888  INFO 15652 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+?[0m?[0;34m2023-11-19 16:12:19.888  INFO 15652 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+?[0m?[0;34m2023-11-19 16:12:19.890  INFO 15652 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 2 ms. Found 3 JPA repository interfaces.
+?[0m?[0;34m2023-11-19 16:12:19.927  INFO 15652 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8881 (http)
+?[0m?[0;34m2023-11-19 16:12:19.927  INFO 15652 --- [    Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+?[0m?[0;34m2023-11-19 16:12:19.927  INFO 15652 --- [    Test worker] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.54]
+?[0m?[0;34m2023-11-19 16:12:19.936  INFO 15652 --- [    Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+?[0m?[0;34m2023-11-19 16:12:19.936  INFO 15652 --- [    Test worker] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 154 ms
+?[0m?[0;34m2023-11-19 16:12:19.950  INFO 15652 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+?[0m?[0;34m2023-11-19 16:12:19.954  INFO 15652 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+?[0m?[0;34m2023-11-19 16:12:19.954  INFO 15652 --- [    Test worker] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:../recipes_db'
+?[0m?[0;34m2023-11-19 16:12:19.973  INFO 15652 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+?[0m?[0;34m2023-11-19 16:12:19.976  INFO 15652 --- [    Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+?[0m?[0;34m2023-11-19 16:12:20.020  INFO 15652 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+?[0m?[0;34m2023-11-19 16:12:20.020  INFO 15652 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+?[0m?[0;34m2023-11-19 16:12:20.050  WARN 15652 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+?[0m?[0;34m2023-11-19 16:12:20.115  INFO 15652 --- [    Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/actuator'
+?[0m?[0;34m2023-11-19 16:12:20.121  INFO 15652 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8881 (http) with context path ''
+?[0m?[0;34m2023-11-19 16:12:20.124  INFO 15652 --- [    Test worker] recipes.RecipesApplication               : Started RecipesApplication in 0.364 seconds (JVM running for 13.343)
 ?[0m?[1;31m
 Start test 6?[0m
-?[0;34m2023-11-12 16:21:30.862  INFO 16071 --- [nio-8881-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-?[0m?[0;34m2023-11-12 16:21:30.862  INFO 16071 --- [nio-8881-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-?[0m?[0;34m2023-11-12 16:21:30.863  INFO 16071 --- [nio-8881-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+?[0;34m2023-11-19 16:12:20.129  INFO 15652 --- [nio-8881-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+?[0m?[0;34m2023-11-19 16:12:20.129  INFO 15652 --- [nio-8881-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+?[0m?[0;34m2023-11-19 16:12:20.130  INFO 15652 --- [nio-8881-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
 ?[1;31m
 Start test 7?[0m
 ?[1;31m
 Start test 8?[0m
+?[0;34mid : 1
+?[0m?[0;34m[1 inch ginger root, minced, 1/2 lemon, juiced, 1/2 teaspoon manuka honey /Test]
 ?[1;31m
 Start test 9?[0m
 ]]></system-out>
