@@ -9,38 +9,38 @@
 4[0m[0;34m =========|_|==============|___/=/_/_/_/
 6[0m[0;34m :: Spring Boot ::                (v2.5.6)
 [0m[0;34m
-ö[0m[0;34m2023-11-19 16:12:07.317  INFO 15652 --- [    Test worker] recipes.RecipesApplication               : Starting RecipesApplication using Java 17.0.8.1 on MacBook-Pro-von-erik.local with PID 15652 (started by erikbusch in /Users/erikbusch/IdeaProjects/Recipes/Recipes/task)
-±[0m[0;34m2023-11-19 16:12:07.318  INFO 15652 --- [    Test worker] recipes.RecipesApplication               : No active profile set, falling back to default profiles: default
-√[0m[0;34m2023-11-19 16:12:07.674  INFO 15652 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
-≠[0m[0;34m2023-11-19 16:12:07.674  INFO 15652 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
-ú[0m[0;34m2023-11-19 16:12:07.685  INFO 15652 --- [    Test worker] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface recipes.DirectionRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-ù[0m[0;34m2023-11-19 16:12:07.685  INFO 15652 --- [    Test worker] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface recipes.IngredientRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-ô[0m[0;34m2023-11-19 16:12:07.686  INFO 15652 --- [    Test worker] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface recipes.RecipeRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-«[0m[0;34m2023-11-19 16:12:07.686  INFO 15652 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10 ms. Found 0 JDBC repository interfaces.
-√[0m[0;34m2023-11-19 16:12:07.691  INFO 15652 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
-¨[0m[0;34m2023-11-19 16:12:07.691  INFO 15652 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-≈[0m[0;34m2023-11-19 16:12:07.702  INFO 15652 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8 ms. Found 3 JPA repository interfaces.
-ù[0m[0;34m2023-11-19 16:12:07.927  INFO 15652 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8881 (http)
-ä[0m[0;34m2023-11-19 16:12:07.932  INFO 15652 --- [    Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-†[0m[0;34m2023-11-19 16:12:07.932  INFO 15652 --- [    Test worker] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.54]
-£[0m[0;34m2023-11-19 16:12:07.972  INFO 15652 --- [    Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-Ø[0m[0;34m2023-11-19 16:12:07.972  INFO 15652 --- [    Test worker] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 634 ms
-ã[0m[0;34m2023-11-19 16:12:08.027  INFO 15652 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-ê[0m[0;34m2023-11-19 16:12:08.099  INFO 15652 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
- [0m[0;34m2023-11-19 16:12:08.102  INFO 15652 --- [    Test worker] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:../recipes_db'
-™[0m[0;34m2023-11-19 16:12:08.178  INFO 15652 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-£[0m[0;34m2023-11-19 16:12:08.202  INFO 15652 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
-©[0m[0;34m2023-11-19 16:12:08.258  INFO 15652 --- [    Test worker] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-™[0m[0;34m2023-11-19 16:12:08.303  INFO 15652 --- [    Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-‰[0m[0;34m2023-11-19 16:12:08.590  INFO 15652 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-¥[0m[0;34m2023-11-19 16:12:08.594  INFO 15652 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-®[0m[0;34m2023-11-19 16:12:08.769  WARN 15652 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-¶[0m[0;34m2023-11-19 16:12:09.008  INFO 15652 --- [    Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/actuator'
-¨[0m[0;34m2023-11-19 16:12:09.025  INFO 15652 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8881 (http) with context path ''
-¥[0m[0;34m2023-11-19 16:12:09.033  INFO 15652 --- [    Test worker] recipes.RecipesApplication               : Started RecipesApplication in 1.869 seconds (JVM running for 2.252)
-¶[0;34m2023-11-19 16:12:09.202  INFO 15652 --- [nio-8881-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-ô[0m[0;34m2023-11-19 16:12:09.202  INFO 15652 --- [nio-8881-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-ë[0m[0;34m2023-11-19 16:12:09.203  INFO 15652 --- [nio-8881-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+ò[0m[0;34m2023-12-03 13:54:09.869  INFO 7699 --- [    Test worker] recipes.RecipesApplication               : Starting RecipesApplication using Java 17.0.8.1 on MacBook-Pro-von-erik.local with PID 7699 (started by erikbusch in /Users/erikbusch/IdeaProjects/Recipes/Recipes/task)
+∞[0m[0;34m2023-12-03 13:54:09.870  INFO 7699 --- [    Test worker] recipes.RecipesApplication               : No active profile set, falling back to default profiles: default
+¬[0m[0;34m2023-12-03 13:54:10.261  INFO 7699 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+¨[0m[0;34m2023-12-03 13:54:10.262  INFO 7699 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+õ[0m[0;34m2023-12-03 13:54:10.272  INFO 7699 --- [    Test worker] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface recipes.DirectionRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+ú[0m[0;34m2023-12-03 13:54:10.273  INFO 7699 --- [    Test worker] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface recipes.IngredientRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+ò[0m[0;34m2023-12-03 13:54:10.273  INFO 7699 --- [    Test worker] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface recipes.RecipeRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+≈[0m[0;34m2023-12-03 13:54:10.273  INFO 7699 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9 ms. Found 0 JDBC repository interfaces.
+¬[0m[0;34m2023-12-03 13:54:10.277  INFO 7699 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+´[0m[0;34m2023-12-03 13:54:10.277  INFO 7699 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+≈[0m[0;34m2023-12-03 13:54:10.291  INFO 7699 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10 ms. Found 3 JPA repository interfaces.
+ú[0m[0;34m2023-12-03 13:54:10.535  INFO 7699 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8881 (http)
+â[0m[0;34m2023-12-03 13:54:10.540  INFO 7699 --- [    Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+ü[0m[0;34m2023-12-03 13:54:10.541  INFO 7699 --- [    Test worker] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.54]
+¢[0m[0;34m2023-12-03 13:54:10.583  INFO 7699 --- [    Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+Æ[0m[0;34m2023-12-03 13:54:10.584  INFO 7699 --- [    Test worker] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 694 ms
+ä[0m[0;34m2023-12-03 13:54:10.643  INFO 7699 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+è[0m[0;34m2023-12-03 13:54:10.723  INFO 7699 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+…[0m[0;34m2023-12-03 13:54:10.727  INFO 7699 --- [    Test worker] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:../recipes_db'
+©[0m[0;34m2023-12-03 13:54:10.827  INFO 7699 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+¢[0m[0;34m2023-12-03 13:54:10.852  INFO 7699 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+®[0m[0;34m2023-12-03 13:54:10.921  INFO 7699 --- [    Test worker] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+©[0m[0;34m2023-12-03 13:54:10.974  INFO 7699 --- [    Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+„[0m[0;34m2023-12-03 13:54:11.287  INFO 7699 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+≥[0m[0;34m2023-12-03 13:54:11.291  INFO 7699 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+ß[0m[0;34m2023-12-03 13:54:11.520  WARN 7699 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+•[0m[0;34m2023-12-03 13:54:11.784  INFO 7699 --- [    Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/actuator'
+´[0m[0;34m2023-12-03 13:54:11.801  INFO 7699 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8881 (http) with context path ''
+≥[0m[0;34m2023-12-03 13:54:11.809  INFO 7699 --- [    Test worker] recipes.RecipesApplication               : Started RecipesApplication in 2.241 seconds (JVM running for 2.632)
+•[0;34m2023-12-03 13:54:11.987  INFO 7699 --- [nio-8881-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+ò[0m[0;34m2023-12-03 13:54:11.987  INFO 7699 --- [nio-8881-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+ê[0m[0;34m2023-12-03 13:54:11.988  INFO 7699 --- [nio-8881-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
 S[0m[0;34mFresh Mint Tea /Test,Light, aromatic and refreshing beverage, ... /Test
 ”[0m[0;34m[Boil water, Pour boiling hot water into a mug, Add fresh mint leaves, Mix and let the mint leaves seep for 3-5 minutes, Add honey and mix again /Test] ,[boiled water, honey, fresh mint leaves /Test]
 [0m[1;31m
@@ -53,9 +53,9 @@
 Start test 4[0m
 [1;31m
 Start test 5[0m
-¨[0;34m2023-11-19 16:12:09.874  INFO 15652 --- [       Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-ï[0m[0;34m2023-11-19 16:12:09.876  INFO 15652 --- [       Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-ì[0m[0;34m2023-11-19 16:12:09.930  INFO 15652 --- [       Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+´[0;34m2023-12-03 13:54:12.656  INFO 7699 --- [       Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+î[0m[0;34m2023-12-03 13:54:12.658  INFO 7699 --- [       Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+í[0m[0;34m2023-12-03 13:54:12.738  INFO 7699 --- [       Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
 [0;34m
 3[0m[0;34m  .   ____          _            __ _ _
 4[0m[0;34m /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -65,43 +65,206 @@
 4[0m[0;34m =========|_|==============|___/=/_/_/_/
 6[0m[0;34m :: Spring Boot ::                (v2.5.6)
 [0m[0;34m
-ö[0m[0;34m2023-11-19 16:12:19.781  INFO 15652 --- [    Test worker] recipes.RecipesApplication               : Starting RecipesApplication using Java 17.0.8.1 on MacBook-Pro-von-erik.local with PID 15652 (started by erikbusch in /Users/erikbusch/IdeaProjects/Recipes/Recipes/task)
-±[0m[0;34m2023-11-19 16:12:19.781  INFO 15652 --- [    Test worker] recipes.RecipesApplication               : No active profile set, falling back to default profiles: default
-√[0m[0;34m2023-11-19 16:12:19.884  INFO 15652 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
-≠[0m[0;34m2023-11-19 16:12:19.885  INFO 15652 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
-ú[0m[0;34m2023-11-19 16:12:19.886  INFO 15652 --- [    Test worker] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface recipes.DirectionRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-ù[0m[0;34m2023-11-19 16:12:19.886  INFO 15652 --- [    Test worker] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface recipes.IngredientRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-ô[0m[0;34m2023-11-19 16:12:19.886  INFO 15652 --- [    Test worker] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface recipes.RecipeRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-∆[0m[0;34m2023-11-19 16:12:19.886  INFO 15652 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1 ms. Found 0 JDBC repository interfaces.
-√[0m[0;34m2023-11-19 16:12:19.888  INFO 15652 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
-¨[0m[0;34m2023-11-19 16:12:19.888  INFO 15652 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-≈[0m[0;34m2023-11-19 16:12:19.890  INFO 15652 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 2 ms. Found 3 JPA repository interfaces.
-ù[0m[0;34m2023-11-19 16:12:19.927  INFO 15652 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8881 (http)
-ä[0m[0;34m2023-11-19 16:12:19.927  INFO 15652 --- [    Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-†[0m[0;34m2023-11-19 16:12:19.927  INFO 15652 --- [    Test worker] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.54]
-£[0m[0;34m2023-11-19 16:12:19.936  INFO 15652 --- [    Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-Ø[0m[0;34m2023-11-19 16:12:19.936  INFO 15652 --- [    Test worker] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 154 ms
-ã[0m[0;34m2023-11-19 16:12:19.950  INFO 15652 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
-ê[0m[0;34m2023-11-19 16:12:19.954  INFO 15652 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
- [0m[0;34m2023-11-19 16:12:19.954  INFO 15652 --- [    Test worker] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:../recipes_db'
-™[0m[0;34m2023-11-19 16:12:19.973  INFO 15652 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-™[0m[0;34m2023-11-19 16:12:19.976  INFO 15652 --- [    Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-‰[0m[0;34m2023-11-19 16:12:20.020  INFO 15652 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-¥[0m[0;34m2023-11-19 16:12:20.020  INFO 15652 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-®[0m[0;34m2023-11-19 16:12:20.050  WARN 15652 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-¶[0m[0;34m2023-11-19 16:12:20.115  INFO 15652 --- [    Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/actuator'
-¨[0m[0;34m2023-11-19 16:12:20.121  INFO 15652 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8881 (http) with context path ''
-µ[0m[0;34m2023-11-19 16:12:20.124  INFO 15652 --- [    Test worker] recipes.RecipesApplication               : Started RecipesApplication in 0.364 seconds (JVM running for 13.343)
+ò[0m[0;34m2023-12-03 13:54:22.501  INFO 7699 --- [    Test worker] recipes.RecipesApplication               : Starting RecipesApplication using Java 17.0.8.1 on MacBook-Pro-von-erik.local with PID 7699 (started by erikbusch in /Users/erikbusch/IdeaProjects/Recipes/Recipes/task)
+∞[0m[0;34m2023-12-03 13:54:22.501  INFO 7699 --- [    Test worker] recipes.RecipesApplication               : No active profile set, falling back to default profiles: default
+¬[0m[0;34m2023-12-03 13:54:22.591  INFO 7699 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+¨[0m[0;34m2023-12-03 13:54:22.591  INFO 7699 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+õ[0m[0;34m2023-12-03 13:54:22.592  INFO 7699 --- [    Test worker] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface recipes.DirectionRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+ú[0m[0;34m2023-12-03 13:54:22.592  INFO 7699 --- [    Test worker] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface recipes.IngredientRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+ò[0m[0;34m2023-12-03 13:54:22.592  INFO 7699 --- [    Test worker] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface recipes.RecipeRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+≈[0m[0;34m2023-12-03 13:54:22.592  INFO 7699 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1 ms. Found 0 JDBC repository interfaces.
+¬[0m[0;34m2023-12-03 13:54:22.594  INFO 7699 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+´[0m[0;34m2023-12-03 13:54:22.594  INFO 7699 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+ƒ[0m[0;34m2023-12-03 13:54:22.596  INFO 7699 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 2 ms. Found 3 JPA repository interfaces.
+ú[0m[0;34m2023-12-03 13:54:22.625  INFO 7699 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8881 (http)
+â[0m[0;34m2023-12-03 13:54:22.626  INFO 7699 --- [    Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+ü[0m[0;34m2023-12-03 13:54:22.626  INFO 7699 --- [    Test worker] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.54]
+¢[0m[0;34m2023-12-03 13:54:22.634  INFO 7699 --- [    Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+Æ[0m[0;34m2023-12-03 13:54:22.634  INFO 7699 --- [    Test worker] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 131 ms
+ä[0m[0;34m2023-12-03 13:54:22.646  INFO 7699 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+è[0m[0;34m2023-12-03 13:54:22.650  INFO 7699 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+…[0m[0;34m2023-12-03 13:54:22.650  INFO 7699 --- [    Test worker] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:../recipes_db'
+©[0m[0;34m2023-12-03 13:54:22.664  INFO 7699 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+©[0m[0;34m2023-12-03 13:54:22.666  INFO 7699 --- [    Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+„[0m[0;34m2023-12-03 13:54:22.707  INFO 7699 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+≥[0m[0;34m2023-12-03 13:54:22.707  INFO 7699 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+ß[0m[0;34m2023-12-03 13:54:22.739  WARN 7699 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+•[0m[0;34m2023-12-03 13:54:22.796  INFO 7699 --- [    Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/actuator'
+´[0m[0;34m2023-12-03 13:54:22.801  INFO 7699 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8881 (http) with context path ''
+¥[0m[0;34m2023-12-03 13:54:22.804  INFO 7699 --- [    Test worker] recipes.RecipesApplication               : Started RecipesApplication in 0.318 seconds (JVM running for 13.626)
 [0m[1;31m
 Start test 6[0m
-¶[0;34m2023-11-19 16:12:20.129  INFO 15652 --- [nio-8881-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-ô[0m[0;34m2023-11-19 16:12:20.129  INFO 15652 --- [nio-8881-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-ë[0m[0;34m2023-11-19 16:12:20.130  INFO 15652 --- [nio-8881-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+•[0;34m2023-12-03 13:54:22.806  INFO 7699 --- [nio-8881-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+ò[0m[0;34m2023-12-03 13:54:22.806  INFO 7699 --- [nio-8881-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+ê[0m[0;34m2023-12-03 13:54:22.806  INFO 7699 --- [nio-8881-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
 [1;31m
 Start test 7[0m
 [1;31m
 Start test 8[0m
 [0;34mid : 1
 \[0m[0;34m[1 inch ginger root, minced, 1/2 lemon, juiced, 1/2 teaspoon manuka honey /Test]
-[1;31m
-Start test 9[0m
+^[0m[0;34mnew ingredient: 1 inch ginger root, minced, check: false, ingredient: boiled water
+U[0m[0;34mnew ingredient: 1/2 lemon, juiced, check: false, ingredient: boiled water
+c[0m[0;34mnew ingredient: 1/2 teaspoon manuka honey /Test, check: false, ingredient: boiled water
+![0m[0;34mdeleted: boiled water
+º[0m[0;34m2023-12-03 13:54:22.846 ERROR 7699 --- [nio-8881-exec-3] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.dao.InvalidDataAccessApiUsageException: org.hibernate.hql.internal.QueryExecutionRequestException: Not supported for DML operations [delete From recipes.Ingredient where name = ?1 and recipe_id = ?2]; nested exception is java.lang.IllegalStateException: org.hibernate.hql.internal.QueryExecutionRequestException: Not supported for DML operations [delete From recipes.Ingredient where name = ?1 and recipe_id = ?2]] with root cause
+[0m[0;34m
+´[0m[0;34morg.hibernate.hql.internal.QueryExecutionRequestException: Not supported for DML operations [delete From recipes.Ingredient where name = ?1 and recipe_id = ?2]
+õ[0m[0;34m	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.errorIfDML(QueryTranslatorImpl.java:319) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+ï[0m[0;34m	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.list(QueryTranslatorImpl.java:370) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+é[0m[0;34m	at org.hibernate.engine.query.spi.HQLQueryPlan.performList(HQLQueryPlan.java:219) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+~[0m[0;34m	at org.hibernate.internal.SessionImpl.list(SessionImpl.java:1414) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+ö[0m[0;34m	at org.hibernate.query.internal.AbstractProducedQuery.doList(AbstractProducedQuery.java:1636) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+ò[0m[0;34m	at org.hibernate.query.internal.AbstractProducedQuery.list(AbstractProducedQuery.java:1604) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+£[0m[0;34m	at org.hibernate.query.internal.AbstractProducedQuery.getSingleResult(AbstractProducedQuery.java:1652) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+Æ[0m[0;34m	at org.springframework.data.jpa.repository.query.JpaQueryExecution$SingleEntityExecution.doExecute(JpaQueryExecution.java:196) ~[spring-data-jpa-2.5.6.jar:2.5.6]
+ï[0m[0;34m	at org.springframework.data.jpa.repository.query.JpaQueryExecution.execute(JpaQueryExecution.java:88) ~[spring-data-jpa-2.5.6.jar:2.5.6]
+ñ[0m[0;34m	at org.springframework.data.jpa.repository.query.AbstractJpaQuery.doExecute(AbstractJpaQuery.java:155) ~[spring-data-jpa-2.5.6.jar:2.5.6]
+î[0m[0;34m	at org.springframework.data.jpa.repository.query.AbstractJpaQuery.execute(AbstractJpaQuery.java:143) ~[spring-data-jpa-2.5.6.jar:2.5.6]
+™[0m[0;34m	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:137) ~[spring-data-commons-2.5.6.jar:2.5.6]
+®[0m[0;34m	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:121) ~[spring-data-commons-2.5.6.jar:2.5.6]
+∏[0m[0;34m	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:159) ~[spring-data-commons-2.5.6.jar:2.5.6]
+∂[0m[0;34m	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:138) ~[spring-data-commons-2.5.6.jar:2.5.6]
+ô[0m[0;34m	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.12.jar:5.3.12]
+™[0m[0;34m	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123) ~[spring-tx-5.3.12.jar:5.3.12]
+Æ[0m[0;34m	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:388) ~[spring-tx-5.3.12.jar:5.3.12]
+ô[0m[0;34m	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-5.3.12.jar:5.3.12]
+ô[0m[0;34m	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.12.jar:5.3.12]
+µ[0m[0;34m	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137) ~[spring-tx-5.3.12.jar:5.3.12]
+ô[0m[0;34m	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.12.jar:5.3.12]
+·[0m[0;34m	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:145) ~[spring-data-jpa-2.5.6.jar:2.5.6]
+ô[0m[0;34m	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.12.jar:5.3.12]
+õ[0m[0;34m	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97) ~[spring-aop-5.3.12.jar:5.3.12]
+ô[0m[0;34m	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.12.jar:5.3.12]
+à[0m[0;34m	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215) ~[spring-aop-5.3.12.jar:5.3.12]
+`[0m[0;34m	at jdk.proxy3/jdk.proxy3.$Proxy116.deleteByNameAndRecipeId(Unknown Source) ~[na:na]
+J[0m[0;34m	at recipes.Service.updateRecipe(Service.java:195) ~[main/:na]
+a[0m[0;34m	at recipes.Service$$FastClassBySpringCGLIB$$2876564c.invoke(<generated>) ~[main/:na]
+y[0m[0;34m	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218) ~[spring-core-5.3.12.jar:5.3.12]
+ù[0m[0;34m	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:783) ~[spring-aop-5.3.12.jar:5.3.12]
+ô[0m[0;34m	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-5.3.12.jar:5.3.12]
+ï[0m[0;34m	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753) ~[spring-aop-5.3.12.jar:5.3.12]
+™[0m[0;34m	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123) ~[spring-tx-5.3.12.jar:5.3.12]
+Æ[0m[0;34m	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:388) ~[spring-tx-5.3.12.jar:5.3.12]
+ô[0m[0;34m	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-5.3.12.jar:5.3.12]
+ô[0m[0;34m	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.12.jar:5.3.12]
+ï[0m[0;34m	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753) ~[spring-aop-5.3.12.jar:5.3.12]
+õ[0m[0;34m	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:698) ~[spring-aop-5.3.12.jar:5.3.12]
+f[0m[0;34m	at recipes.Service$$EnhancerBySpringCGLIB$$b222aa90.updateRecipe(<generated>) ~[main/:na]
+O[0m[0;34m	at recipes.Controller.updateRecipe(Controller.java:59) ~[main/:na]
+g[0m[0;34m	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+y[0m[0;34m	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+Å[0m[0;34m	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+S[0m[0;34m	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+ó[0m[0;34m	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-5.3.12.jar:5.3.12]
+ü[0m[0;34m	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150) ~[spring-web-5.3.12.jar:5.3.12]
+æ[0m[0;34m	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-5.3.12.jar:5.3.12]
+¿[0m[0;34m	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.3.12.jar:5.3.12]
+ª[0m[0;34m	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.12.jar:5.3.12]
+ß[0m[0;34m	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.12.jar:5.3.12]
+å[0m[0;34m	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067) ~[spring-webmvc-5.3.12.jar:5.3.12]
+ä[0m[0;34m	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963) ~[spring-webmvc-5.3.12.jar:5.3.12]
+é[0m[0;34m	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.12.jar:5.3.12]
+Ñ[0m[0;34m	at org.springframework.web.servlet.FrameworkServlet.doPut(FrameworkServlet.java:920) ~[spring-webmvc-5.3.12.jar:5.3.12]
+s[0m[0;34m	at javax.servlet.http.HttpServlet.service(HttpServlet.java:684) ~[tomcat-embed-core-9.0.54.jar:4.0.FR]
+Ü[0m[0;34m	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.12.jar:5.3.12]
+s[0m[0;34m	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) ~[tomcat-embed-core-9.0.54.jar:4.0.FR]
+g[0m[0;34m	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+y[0m[0;34m	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+Å[0m[0;34m	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+S[0m[0;34m	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+à[0m[0;34m	at org.apache.catalina.security.SecurityUtil.lambda$execute$0(SecurityUtil.java:280) ~[tomcat-embed-core-9.0.54.jar:9.0.54]
+i[0m[0;34m	at java.base/java.security.AccessController.doPrivileged(AccessController.java:712) ~[na:na]
+_[0m[0;34m	at java.base/javax.security.auth.Subject.doAsPrivileged(Subject.java:584) ~[na:na]
+[0m[0;34m	at org.apache.catalina.security.SecurityUtil.execute(SecurityUtil.java:311) ~[tomcat-embed-core-9.0.54.jar:9.0.54]
+Ö[0m[0;34m	at org.apache.catalina.security.SecurityUtil.doAsPrivilege(SecurityUtil.java:170) ~[tomcat-embed-core-9.0.54.jar:9.0.54]
+ò[0m[0;34m	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:221) ~[tomcat-embed-core-9.0.54.jar:9.0.54]
+ô[0m[0;34m	at org.apache.catalina.core.ApplicationFilterChain.lambda$doFilter$0(ApplicationFilterChain.java:145) ~[tomcat-embed-core-9.0.54.jar:9.0.54]
+i[0m[0;34m	at java.base/java.security.AccessController.doPrivileged(AccessController.java:569) ~[na:na]
+ê[0m[0;34m	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:143) ~[tomcat-embed-core-9.0.54.jar:9.0.54]
+Ç[0m[0;34m	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.54.jar:9.0.54]
+^[0m[0;34m	at jdk.internal.reflect.GeneratedMethodAccessor61.invoke(Unknown Source) ~[na:na]
+Å[0m[0;34m	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+S[0m[0;34m	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+à[0m[0;34m	at org.apache.catalina.security.SecurityUtil.lambda$execute$0(SecurityUtil.java:280) ~[tomcat-embed-core-9.0.54.jar:9.0.54]
+i[0m[0;34m	at java.base/java.security.AccessController.doPrivileged(AccessController.java:712) ~[na:na]
+_[0m[0;34m	at java.base/javax.security.auth.Subject.doAsPrivileged(Subject.java:584) ~[na:na]
+[0m[0;34m	at org.apache.catalina.security.SecurityUtil.execute(SecurityUtil.java:311) ~[tomcat-embed-core-9.0.54.jar:9.0.54]
+Ö[0m[0;34m	at org.apache.catalina.security.SecurityUtil.doAsPrivilege(SecurityUtil.java:253) ~[tomcat-embed-core-9.0.54.jar:9.0.54]
+ò[0m[0;34m	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:187) ~[tomcat-embed-core-9.0.54.jar:9.0.54]
+ô[0m[0;34m	at org.apache.catalina.core.ApplicationFilterChain.lambda$doFilter$0(ApplicationFilterChain.java:145) ~[tomcat-embed-core-9.0.54.jar:9.0.54]
+i[0m[0;34m	at java.base/java.security.AccessController.doPrivileged(AccessController.java:569) ~[na:na]
+ê[0m[0;34m	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:143) ~[tomcat-embed-core-9.0.54.jar:9.0.54]
+ì[0m[0;34m	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.12.jar:5.3.12]
+ã[0m[0;34m	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.12.jar:5.3.12]
+^[0m[0;34m	at jdk.internal.reflect.GeneratedMethodAccessor61.invoke(Unknown Source) ~[na:na]
+Å[0m[0;34m	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+S[0m[0;34m	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+à[0m[0;34m	at org.apache.catalina.security.SecurityUtil.lambda$execute$0(SecurityUtil.java:280) ~[tomcat-embed-core-9.0.54.jar:9.0.54]
+i[0m[0;34m	at java.base/java.security.AccessController.doPrivileged(AccessController.java:712) ~[na:na]
+_[0m[0;34m	at java.base/javax.security.auth.Subject.doAsPrivileged(Subject.java:584) ~[na:na]
+[0m[0;34m	at org.apache.catalina.security.SecurityUtil.execute(SecurityUtil.java:311) ~[tomcat-embed-core-9.0.54.jar:9.0.54]
+Ö[0m[0;34m	at org.apache.catalina.security.SecurityUtil.doAsPrivilege(SecurityUtil.java:253) ~[tomcat-embed-core-9.0.54.jar:9.0.54]
+ò[0m[0;34m	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:187) ~[tomcat-embed-core-9.0.54.jar:9.0.54]
+ô[0m[0;34m	at org.apache.catalina.core.ApplicationFilterChain.lambda$doFilter$0(ApplicationFilterChain.java:145) ~[tomcat-embed-core-9.0.54.jar:9.0.54]
+i[0m[0;34m	at java.base/java.security.AccessController.doPrivileged(AccessController.java:569) ~[na:na]
+ê[0m[0;34m	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:143) ~[tomcat-embed-core-9.0.54.jar:9.0.54]
+å[0m[0;34m	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.12.jar:5.3.12]
+ã[0m[0;34m	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.12.jar:5.3.12]
+^[0m[0;34m	at jdk.internal.reflect.GeneratedMethodAccessor61.invoke(Unknown Source) ~[na:na]
+Å[0m[0;34m	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+S[0m[0;34m	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+à[0m[0;34m	at org.apache.catalina.security.SecurityUtil.lambda$execute$0(SecurityUtil.java:280) ~[tomcat-embed-core-9.0.54.jar:9.0.54]
+i[0m[0;34m	at java.base/java.security.AccessController.doPrivileged(AccessController.java:712) ~[na:na]
+_[0m[0;34m	at java.base/javax.security.auth.Subject.doAsPrivileged(Subject.java:584) ~[na:na]
+[0m[0;34m	at org.apache.catalina.security.SecurityUtil.execute(SecurityUtil.java:311) ~[tomcat-embed-core-9.0.54.jar:9.0.54]
+Ö[0m[0;34m	at org.apache.catalina.security.SecurityUtil.doAsPrivilege(SecurityUtil.java:253) ~[tomcat-embed-core-9.0.54.jar:9.0.54]
+ò[0m[0;34m	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:187) ~[tomcat-embed-core-9.0.54.jar:9.0.54]
+ô[0m[0;34m	at org.apache.catalina.core.ApplicationFilterChain.lambda$doFilter$0(ApplicationFilterChain.java:145) ~[tomcat-embed-core-9.0.54.jar:9.0.54]
+i[0m[0;34m	at java.base/java.security.AccessController.doPrivileged(AccessController.java:569) ~[na:na]
+ê[0m[0;34m	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:143) ~[tomcat-embed-core-9.0.54.jar:9.0.54]
+Æ[0m[0;34m	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:96) ~[spring-boot-actuator-2.5.6.jar:2.5.6]
+ã[0m[0;34m	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.12.jar:5.3.12]
+^[0m[0;34m	at jdk.internal.reflect.GeneratedMethodAccessor61.invoke(Unknown Source) ~[na:na]
+Å[0m[0;34m	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+S[0m[0;34m	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+à[0m[0;34m	at org.apache.catalina.security.SecurityUtil.lambda$execute$0(SecurityUtil.java:280) ~[tomcat-embed-core-9.0.54.jar:9.0.54]
+i[0m[0;34m	at java.base/java.security.AccessController.doPrivileged(AccessController.java:712) ~[na:na]
+_[0m[0;34m	at java.base/javax.security.auth.Subject.doAsPrivileged(Subject.java:584) ~[na:na]
+[0m[0;34m	at org.apache.catalina.security.SecurityUtil.execute(SecurityUtil.java:311) ~[tomcat-embed-core-9.0.54.jar:9.0.54]
+Ö[0m[0;34m	at org.apache.catalina.security.SecurityUtil.doAsPrivilege(SecurityUtil.java:253) ~[tomcat-embed-core-9.0.54.jar:9.0.54]
+ò[0m[0;34m	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:187) ~[tomcat-embed-core-9.0.54.jar:9.0.54]
+ô[0m[0;34m	at org.apache.catalina.core.ApplicationFilterChain.lambda$doFilter$0(ApplicationFilterChain.java:145) ~[tomcat-embed-core-9.0.54.jar:9.0.54]
+i[0m[0;34m	at java.base/java.security.AccessController.doPrivileged(AccessController.java:569) ~[na:na]
+ê[0m[0;34m	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:143) ~[tomcat-embed-core-9.0.54.jar:9.0.54]
+ô[0m[0;34m	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.12.jar:5.3.12]
+ã[0m[0;34m	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.12.jar:5.3.12]
+^[0m[0;34m	at jdk.internal.reflect.GeneratedMethodAccessor61.invoke(Unknown Source) ~[na:na]
+Å[0m[0;34m	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+S[0m[0;34m	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+à[0m[0;34m	at org.apache.catalina.security.SecurityUtil.lambda$execute$0(SecurityUtil.java:280) ~[tomcat-embed-core-9.0.54.jar:9.0.54]
+i[0m[0;34m	at java.base/java.security.AccessController.doPrivileged(AccessController.java:712) ~[na:na]
+_[0m[0;34m	at java.base/javax.security.auth.Subject.doAsPrivileged(Subject.java:584) ~[na:na]
+[0m[0;34m	at org.apache.catalina.security.SecurityUtil.execute(SecurityUtil.java:311) ~[tomcat-embed-core-9.0.54.jar:9.0.54]
+Ö[0m[0;34m	at org.apache.catalina.security.SecurityUtil.doAsPrivilege(SecurityUtil.java:253) ~[tomcat-embed-core-9.0.54.jar:9.0.54]
+ò[0m[0;34m	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:187) ~[tomcat-embed-core-9.0.54.jar:9.0.54]
+ô[0m[0;34m	at org.apache.catalina.core.ApplicationFilterChain.lambda$doFilter$0(ApplicationFilterChain.java:145) ~[tomcat-embed-core-9.0.54.jar:9.0.54]
+i[0m[0;34m	at java.base/java.security.AccessController.doPrivileged(AccessController.java:569) ~[na:na]
+ê[0m[0;34m	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:143) ~[tomcat-embed-core-9.0.54.jar:9.0.54]
+ä[0m[0;34m	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197) ~[tomcat-embed-core-9.0.54.jar:9.0.54]
+â[0m[0;34m	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) ~[tomcat-embed-core-9.0.54.jar:9.0.54]
+ç[0m[0;34m	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540) ~[tomcat-embed-core-9.0.54.jar:9.0.54]
+Ñ[0m[0;34m	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) ~[tomcat-embed-core-9.0.54.jar:9.0.54]
+É[0m[0;34m	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-9.0.54.jar:9.0.54]
+á[0m[0;34m	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) ~[tomcat-embed-core-9.0.54.jar:9.0.54]
+Ç[0m[0;34m	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) ~[tomcat-embed-core-9.0.54.jar:9.0.54]
+Å[0m[0;34m	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382) ~[tomcat-embed-core-9.0.54.jar:9.0.54]
+á[0m[0;34m	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-9.0.54.jar:9.0.54]
+é[0m[0;34m	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895) ~[tomcat-embed-core-9.0.54.jar:9.0.54]
+ä[0m[0;34m	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1722) ~[tomcat-embed-core-9.0.54.jar:9.0.54]
+Ü[0m[0;34m	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.54.jar:9.0.54]
+ê[0m[0;34m	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-9.0.54.jar:9.0.54]
+ê[0m[0;34m	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-9.0.54.jar:9.0.54]
+â[0m[0;34m	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.54.jar:9.0.54]
+H[0m[0;34m	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+[0m[0;34m

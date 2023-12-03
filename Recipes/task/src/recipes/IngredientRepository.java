@@ -9,7 +9,9 @@ public interface IngredientRepository extends CrudRepository<Ingredient,Integer>
 
     Integer deleteByName(String name);
 
-    @Query("delete From Ingredient where name = ?1 and recipe_id = ?2")
-    Integer deleteByNameAndRecipeId(String name, int id);
+     @Query("select id From Ingredient where name like ?1 and recipe_id = ?2")
+     Integer getIdByName(String name, int id);
 
+    @Override
+    void deleteById(Integer integer);
 }

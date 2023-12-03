@@ -165,7 +165,8 @@ public class Service {
         recipeRepository.deleteById(id);
         return true;
     }
-   @Transactional
+
+    @Transactional
     public RecipeDTO updateRecipe(int id, RecipeDTO newRecipeDTO) {
         System.out.println("id : " + id);
         System.out.println(newRecipeDTO.getIngredients());
@@ -177,25 +178,63 @@ public class Service {
         Recipe newRecipe = recipeDTOConverterToRecipe(newRecipeDTO);
         newRecipe.setId(id);
 
+        Iterable<Ingredient> tempIngredients = ingredientRepository.findAll();
+        List<Ingredient> oldIngredient = new ArrayList<>();
+        tempIngredients.forEach((value) -> {
+            System.out.println("test");
+            if (value.getRecipe().getId() == id) {
+                System.out.println();
+                oldIngredient.add(value);
+            }
+        });
 
-        for (String ingredient : oldRecipeDTO.getIngredients()) {
+        for (Ingredient ingredient : oldIngredient) {
             boolean check = false;
-            for(String newIngredient : newRecipeDTO.getIngredients()){
-                if(newIngredient.equals(ingredient)){
+            for (String newIngredient : newRecipeDTO.getIngredients()) {
+                System.out.println("1");
+                if (newIngredient.equals(ingredient.getName())) {
+                    check = true;
+                    System.out.println("2");
+                }
+                System.out.println("3");
+               // System.out.println("new ingredient: " + newIngredient + ", check: " + check + ", ingredient: " + ingredient);
+            }
+            System.out.println("4");
+            if (!check) {
+
+                ingredientRepository.delete(ingredient);
+
+
+            }
+            System.out.println("5");
+
+        }
+
+
+        /*for (String ingredient : oldRecipeDTO.getIngredients()) {
+            boolean check = false;
+            for (String newIngredient : newRecipeDTO.getIngredients()) {
+                if (newIngredient.equals(ingredient)) {
                     check = true;
                 }
                 System.out.println("new ingredient: " + newIngredient + ", check: " + check + ", ingredient: " + ingredient);
             }
-            if(!check){
-                System.out.println("deleted: " + ingredient);
-                ingredientRepository.deleteByName(ingredient);
-            }
-            if (!newRecipeDTO.getIngredients().contains(ingredient)) {
+            if (!check) {
+//                System.out.println("deleted: " + ingredient);
+                deleteIngredientByNameAndRecipeId(ingredient, id);
 
-                ingredientRepository.deleteByNameAndRecipeId(ingredient,id);
+
             }
+//            if (!newRecipeDTO.getIngredients().contains(ingredient)) {
+//                System.out.println("i am here");
+//
+//
+//               Integer ingredientId  = ingredientRepository.getByNameAndRecipeId(ingredient, id);
+//                System.out.println(ingredientId);
+//                ingredientRepository.deleteById(ingredientId);
+//            }
         }
-
+*/
         for (String ingredient : newRecipeDTO.getIngredients()) {
             if (!oldRecipeDTO.getIngredients().contains(ingredient)) {
                 Ingredient newIngredient = new Ingredient();
@@ -205,12 +244,12 @@ public class Service {
             }
         }
 
-       for (String direction : oldRecipeDTO.getDirections()) {
-           if (!newRecipeDTO.getIngredients().contains(direction)) {
+        for (String direction : oldRecipeDTO.getDirections()) {
+            if (!newRecipeDTO.getIngredients().contains(direction)) {
 //todo:org.hibernate.hql.internal.QueryExecutionRequestException: Not supported for DML operations [delete From recipes.Ingredient where name = ?1 and recipe_id = ?2]
-               directionRepository.deleteByName(direction);
-           }
-       }
+                directionRepository.deleteByName(direction);
+            }
+        }
 
 
         for (String direction : newRecipeDTO.getDirections()) {
@@ -226,4 +265,15 @@ public class Service {
 
         return newRecipeDTO;
     }
+
+    @Transactional
+    public void deleteIngredientByNameAndRecipeId(String name, int id) {
+        Integer ingredientId = ingredientRepository.getIdByName(name, id);
+        System.out.println(name);
+        System.out.println(id);
+        System.out.println(ingredientId);
+        ingredientRepository.deleteById(ingredientId);
+
+    }
+
 }
