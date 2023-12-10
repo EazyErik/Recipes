@@ -15,8 +15,8 @@ public class Direction {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String name;
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn
+    @ManyToOne
+    @JoinColumn(name = "recipe_id")
     private Recipe recipe;
 
 

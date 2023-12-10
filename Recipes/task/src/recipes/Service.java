@@ -1,18 +1,17 @@
 package recipes;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+
+import java.util.Collections;
+import java.util.Comparator;
+
+
 import javax.transaction.Transactional;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
+import java.util.*;
 
 @Component
 
@@ -58,41 +57,14 @@ public class Service {
 
     private Recipe recipeDTOConverterToRecipe(RecipeDTO recipeDTO) {
         return new Recipe(recipeDTO.getName(), recipeDTO.getDescription(), recipeDTO.getCategory(), LocalDateTime.now());
-
-    }
-
-    private List<Ingredient> convertStringToIngredient(List<String> strings, Recipe recipe) {
-        List<Ingredient> ingredients = new ArrayList<>();
-        for (String string : strings) {
-            Ingredient ingredient = new Ingredient();
-            ingredient.setName(string);
-            ingredient.setRecipe(recipe);
-            ingredients.add(ingredient);
-        }
-        return ingredients;
-    }
-
-    private List<Direction> convertStringToDirection(List<String> strings, Recipe recipe) {
-        List<Direction> directions = new ArrayList<>();
-        for (String string : strings) {
-            Direction direction = new Direction();
-            direction.setName(string);
-            direction.setRecipe(recipe);
-            directions.add(direction);
-        }
-        return directions;
     }
 
     public RecipeDTO getRecipeById(int id) {
-        //List<Recipe> optionalRecipes = recipes.stream().filter(recipe -> id == recipe.getId()).collect(Collectors.toList());
         Optional<Recipe> optionalRecipe = recipeRepository.findById(id);
-
         if (optionalRecipe.isPresent()) {
             return recipeConverterToDTO(optionalRecipe.get());
         }
         return null;
-
-
     }
 
     public List<Recipe> getAllRecipes() {
@@ -114,24 +86,26 @@ public class Service {
         for (Recipe recipe : filteredRecipes) {
             finalResults.add(recipeConverterToDTO(recipe));
         }
+        Collections.sort(finalResults, Comparator.comparing(RecipeDTO::getDate).reversed());
+
         return finalResults;
     }
 
     public List<Recipe> filterByName(String name, List<Recipe> recipes) {
         List<Recipe> results = new ArrayList<>();
         for (Recipe recipe : recipes) {
-            if (recipe.getName().toLowerCase().contains(name.toLowerCase())) {
+            String nameT= recipe.getName();
+            if (nameT.toLowerCase().contains(name.toLowerCase())) {
                 results.add(recipe);
             }
         }
         return results;
-
     }
 
     public List<Recipe> filterByCategory(String category, List<Recipe> recipes) {
         List<Recipe> results = new ArrayList<>();
         for (Recipe recipe : recipes) {
-            if (recipe.getCategory().toLowerCase().equals(category.toLowerCase())) {
+            if (recipe.getCategory().equalsIgnoreCase(category)) {
                 results.add(recipe);
             }
         }
@@ -139,19 +113,25 @@ public class Service {
     }
 
     public IdDTO addNewRecipe(RecipeDTO recipe) {
+        Recipe savedRecipe = recipeDTOConverterToRecipe(recipe);
 
-        Recipe savedRecipe = recipeRepository.save(recipeDTOConverterToRecipe(recipe));
+        List<Direction> directions = new ArrayList<>();
+        List<Ingredient> ingredients = new ArrayList<>();
 
-        List<Ingredient> ingredients = convertStringToIngredient(recipe.getIngredients(), savedRecipe);
-        List<Direction> directions = convertStringToDirection(recipe.getDirections(), savedRecipe);
-
-        for (Direction direction : directions) {
-            directionRepository.save(direction);
+        for (String directionName : recipe.getDirections()) {
+            Direction direction = new Direction(directionName, savedRecipe);
+            directions.add(direction);
         }
 
-        for (Ingredient ingredient : ingredients) {
-            ingredientRepository.save(ingredient);
+        for (String ingredientName : recipe.getIngredients()) {
+            Ingredient ingredient = new Ingredient(ingredientName, savedRecipe);
+            ingredients.add(ingredient);
         }
+        savedRecipe.setDirections(directions);
+        savedRecipe.setIngredients(ingredients);
+        savedRecipe.setDate(LocalDateTime.now());
+
+        savedRecipe = recipeRepository.save(savedRecipe);
 
         return new IdDTO(savedRecipe.getId());
 
@@ -166,8 +146,43 @@ public class Service {
         return true;
     }
 
+    public RecipeDTO updateRecipe(int id, RecipeDTO recipe) {
+        Optional<Recipe> optionalRecipe = recipeRepository.findById(id);
+        if (optionalRecipe.isEmpty()) {
+            return null;
+        }
+        Recipe targetedRecipe = optionalRecipe.get();
+
+        targetedRecipe.setCategory(recipe.getCategory());
+        targetedRecipe.setDescription(recipe.getDescription());
+        targetedRecipe.setName(recipe.getName());
+        targetedRecipe.setDate(LocalDateTime.now());
+
+       /* targetedRecipe.getDirections().clear();
+        targetedRecipe.getIngredients().clear();*/
+
+        List<Direction> directions = new ArrayList<>();
+        List<Ingredient> ingredients = new ArrayList<>();
+
+
+        for (String directionName : recipe.getDirections()) {
+            Direction direction = new Direction(directionName, targetedRecipe);
+            directions.add(direction);
+        }
+
+        for (String ingredientName : recipe.getIngredients()) {
+            Ingredient ingredient = new Ingredient(ingredientName, targetedRecipe);
+            ingredients.add(ingredient);
+        }
+        targetedRecipe.setDirections(directions);
+        targetedRecipe.setIngredients(ingredients);
+
+        targetedRecipe = recipeRepository.save(targetedRecipe);
+        return recipeConverterToDTO(targetedRecipe);
+    }
+
     @Transactional
-    public RecipeDTO updateRecipe(int id, RecipeDTO newRecipeDTO) {
+    public RecipeDTO updateRecipe1(int id, RecipeDTO newRecipeDTO) {
         System.out.println("id : " + id);
         System.out.println(newRecipeDTO.getIngredients());
         RecipeDTO oldRecipeDTO = getRecipeById(id);
@@ -197,7 +212,7 @@ public class Service {
                     System.out.println("2");
                 }
                 System.out.println("3");
-               // System.out.println("new ingredient: " + newIngredient + ", check: " + check + ", ingredient: " + ingredient);
+                // System.out.println("new ingredient: " + newIngredient + ", check: " + check + ", ingredient: " + ingredient);
             }
             System.out.println("4");
             if (!check) {
