@@ -13,6 +13,7 @@
     <orderEntry type="library" scope="PROVIDED" name="Gradle: org.projectlombok:lombok:1.18.22" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter-actuator:2.5.6" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter-web:2.5.6" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter-security:2.5.6" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter-data-jpa:2.5.6" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter-data-jdbc:2.5.6" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter:2.5.6" level="project" />
@@ -22,6 +23,9 @@
     <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter-tomcat:2.5.6" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework:spring-webmvc:5.3.12" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework:spring-web:5.3.12" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework.security:spring-security-web:5.5.3" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework.security:spring-security-config:5.5.3" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework:spring-aop:5.3.12" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter-aop:2.5.6" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter-jdbc:2.5.6" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework.data:spring-data-jpa:2.5.6" level="project" />
@@ -46,9 +50,9 @@
     <orderEntry type="library" name="Gradle: org.apache.tomcat.embed:tomcat-embed-core:9.0.54" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.tomcat.embed:tomcat-embed-el:9.0.54" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework:spring-context:5.3.12" level="project" />
-    <orderEntry type="library" name="Gradle: org.springframework:spring-aop:5.3.12" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework:spring-beans:5.3.12" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework:spring-expression:5.3.12" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework.security:spring-security-core:5.5.3" level="project" />
     <orderEntry type="library" name="Gradle: org.aspectj:aspectjweaver:1.9.7" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework:spring-jdbc:5.3.12" level="project" />
     <orderEntry type="library" name="Gradle: com.zaxxer:HikariCP:4.0.3" level="project" />
@@ -72,6 +76,7 @@
     <orderEntry type="library" name="Gradle: org.springframework:spring-jcl:5.3.12" level="project" />
     <orderEntry type="library" name="Gradle: com.fasterxml.jackson.core:jackson-annotations:2.12.5" level="project" />
     <orderEntry type="library" name="Gradle: com.fasterxml.jackson.core:jackson-core:2.12.5" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework.security:spring-security-crypto:5.5.3" level="project" />
     <orderEntry type="library" name="Gradle: jakarta.xml.bind:jakarta.xml.bind-api:2.3.3" level="project" />
     <orderEntry type="library" name="Gradle: org.glassfish.jaxb:txw2:2.3.5" level="project" />
     <orderEntry type="library" name="Gradle: com.sun.istack:istack-commons-runtime:3.0.12" level="project" />
