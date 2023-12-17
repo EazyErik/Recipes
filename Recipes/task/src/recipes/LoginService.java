@@ -1,6 +1,7 @@
 package recipes;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.Objects;
@@ -10,6 +11,9 @@ import java.util.concurrent.atomic.AtomicBoolean;
 public class LoginService {
     @Autowired
     UserRepository userRepository;
+
+    @Autowired
+    PasswordEncoder passwordEncoder;
 
 
     public boolean isValidEmail(String email) {
@@ -36,5 +40,12 @@ public class LoginService {
             }
         });
         return response.get();
+    }
+
+    public void saveUser(User user){
+        String encode = passwordEncoder.encode(user.getPassword());
+        System.out.println(encode);
+        user.setPassword(encode);
+        userRepository.save(user);
     }
 }

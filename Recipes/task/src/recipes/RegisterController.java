@@ -10,16 +10,19 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api")
-public class LoginController {
+public class RegisterController {
     @Autowired
     LoginService loginService;
 
-    @PostMapping("/register/1")
-    public ResponseEntity<Object> register(@RequestBody String email,@RequestBody String password){
+    @PostMapping("/register")
+    public ResponseEntity<Object> register(@RequestBody User user){
         System.out.println("register");
-         if(!loginService.isValidEmail(email) || !loginService.isValidPassword(password) || loginService.existsEmail(email)){
-             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
-         }
-         return new ResponseEntity<>(HttpStatus.OK);
+        if(!loginService.isValidEmail(user.getEmail()) || !loginService.isValidPassword(user.getPassword()) || loginService.existsEmail(user.getEmail())){
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
+        loginService.saveUser(user);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
+
+
 }

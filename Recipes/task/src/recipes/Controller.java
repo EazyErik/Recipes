@@ -3,6 +3,8 @@ package recipes;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -65,6 +67,9 @@ public class Controller {
     @GetMapping("/recipe/{id}")
     public ResponseEntity<RecipeDTO> getRecipeById(@PathVariable int id) {
         RecipeDTO recipe = service.getRecipeById(id);
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String username = authentication.getName();
+        System.out.println(username);
         if (recipe != null) {
             return new ResponseEntity<>(recipe, HttpStatus.OK);
         } else {
