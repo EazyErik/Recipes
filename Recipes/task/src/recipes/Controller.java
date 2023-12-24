@@ -9,6 +9,9 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+import static recipes.UpdateDeleteStatus.RECIPE_NOT_FOUND;
+import static recipes.UpdateDeleteStatus.UNAUTHORIZED;
+
 @RestController
 @RequestMapping("/api")
 public class Controller {
@@ -34,8 +37,9 @@ public class Controller {
         ) {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
-
-        return new ResponseEntity<IdDTO>(service.addNewRecipe(recipeDTO), HttpStatus.OK);
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String authorEmail = authentication.getName();
+        return new ResponseEntity<IdDTO>(service.addNewRecipe(recipeDTO,authorEmail), HttpStatus.OK);
 
 
     }
@@ -56,9 +60,13 @@ public class Controller {
         ) {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
-        RecipeDTO updatedRecipe = service.updateRecipe(id, recipeDTO);
-        if (updatedRecipe == null) {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String authorEmail = authentication.getName();
+        UpdateDeleteStatus status = service.updateRecipe(id, recipeDTO,authorEmail);
+        if (status == RECIPE_NOT_FOUND) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }else if(status == UNAUTHORIZED){
+            return new ResponseEntity<>(HttpStatus.FORBIDDEN);
         }
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 
@@ -92,11 +100,17 @@ public class Controller {
 
     @DeleteMapping("/recipe/{id}")
     public ResponseEntity<RecipeDTO> deleteRecipeById(@PathVariable int id) {
-        boolean isDeleted = service.deleteById(id);
-        if (isDeleted) {
-            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String authorEmail = authentication.getName();
+        UpdateDeleteStatus status = service.deleteById(id,authorEmail);
+        if (status == RECIPE_NOT_FOUND) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
-        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        else if(status == UNAUTHORIZED){
+            return new ResponseEntity<>(HttpStatus.FORBIDDEN);
+        }
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 
 
     }

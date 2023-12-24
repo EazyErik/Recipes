@@ -3,7 +3,7 @@ hyperskill_project:
   ide_files: https://cogniterra.org/media/attachments/lesson/25525/additional_files.json
   is_template_based: false
   use_ide: true
-update_date: "Sun, 17 Dec 2023 12:54:07 UTC"
+update_date: "Sun, 24 Dec 2023 12:52:20 UTC"
 stages:
   - id: 917
     step: 13088
@@ -19,7 +19,7 @@ stages:
     is_completed: true
   - id: 921
     step: 13092
-    is_completed: false
+    is_completed: true
 topics:
   0:
     - title: Modulo division
@@ -28,9 +28,9 @@ topics:
       theory_id: 16547
     - title: "Big O: how to count it"
       theory_id: 35901
-    - title: "Best, average and worst cases"
+    - title: Complexity cases and how to use them
       theory_id: 20084
-    - title: Data structures
+    - title: Abstract and concrete data structures
       theory_id: 16927
     - title: "HTTP: HyperText Transfer Protocol"
       theory_id: 6569
@@ -54,8 +54,6 @@ topics:
       theory_id: 15090
     - title: Pseudocode basics
       theory_id: 19510
-    - title: Complex constructions in pseudocode
-      theory_id: 20922
     - title: Fixed-size array
       theory_id: 20078
     - title: Dynamic array
@@ -94,6 +92,8 @@ topics:
       theory_id: 13971
     - title: Data Transfer Object in Spring
       theory_id: 25613
+    - title: Complex constructions in pseudocode
+      theory_id: 20922
     - title: Introduction to Java
       theory_id: 38627
     - title: "Basic literals: numbers, strings and characters"
@@ -200,36 +200,36 @@ topics:
       theory_id: 7545
     - title: Dependency injection
       theory_id: 20580
-    - title: Concept of design patterns
-      theory_id: 3611
     - title: Interfaces
       theory_id: 9640
+    - title: Concept of design patterns
+      theory_id: 3611
     - title: YAML
       theory_id: 12722
     - title: Code organization. Design principles
       theory_id: 8956
     - title: Coupling and cohesion
       theory_id: 21478
-    - title: Introduction to software architecture
-      theory_id: 15368
     - title: "Synchronous, asynchronous, parallel"
       theory_id: 9332
     - title: Processes and threads
       theory_id: 9420
-    - title: HTML basics
-      theory_id: 6434
     - title: What are databases
       theory_id: 8497
+    - title: Introduction to software architecture
+      theory_id: 15368
+    - title: HTML basics
+      theory_id: 6434
     - title: Tags and Attributes
       theory_id: 7536
     - title: HTML page structure
       theory_id: 6491
+    - title: "Hashing: overview"
+      theory_id: 9831
     - title: JSON
       theory_id: 6854
     - title: Data and object mapping
       theory_id: 8262
-    - title: "Hashing: overview"
-      theory_id: 9831
     - title: Hash function
       theory_id: 30143
     - title: Hash table
@@ -360,14 +360,18 @@ topics:
       theory_id: 8611
     - title: Logic and comparison expressions
       theory_id: 8619
-    - title: Basic INSERT statement
-      theory_id: 9059
-    - title: Basic DELETE statement
-      theory_id: 9075
     - title: The NULL value
       theory_id: 7907
     - title: Special WHERE operators
       theory_id: 10521
+    - title: Basic INSERT statement
+      theory_id: 9059
+    - title: Basic DELETE statement
+      theory_id: 9075
+    - title: Object-Relational Mapping (ORM)
+      theory_id: 8312
+    - title: Introduction to JPA
+      theory_id: 17125
     - title: Regexps in Java
       theory_id: 3670
     - title: "Sets, ranges, alternations"
@@ -378,10 +382,6 @@ topics:
       theory_id: 3680
     - title: Regexes in programs
       theory_id: 3696
-    - title: Object-Relational Mapping (ORM)
-      theory_id: 8312
-    - title: Introduction to JPA
-      theory_id: 17125
     - title: Intro to MySQL
       theory_id: 16662
     - title: Introduction to transactions
@@ -392,8 +392,6 @@ topics:
       theory_id: 17974
     - title: Generic methods
       theory_id: 3606
-    - title: Regular expression
-      theory_id: 7580
     - title: Entities
       theory_id: 18135
     - title: JPA relationships
@@ -402,6 +400,8 @@ topics:
       theory_id: 27502
     - title: Embeddable and ElementCollection
       theory_id: 29504
+    - title: Regular expression
+      theory_id: 7580
     - title: Adding annotations
       theory_id: 3622
     - title: Inner classes

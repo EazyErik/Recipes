@@ -2,6 +2,7 @@ package recipes;
 
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 
 
@@ -12,6 +13,8 @@ import java.util.Comparator;
 import javax.transaction.Transactional;
 import java.time.LocalDateTime;
 import java.util.*;
+
+import static recipes.UpdateDeleteStatus.*;
 
 @Component
 
@@ -94,7 +97,7 @@ public class Service {
     public List<Recipe> filterByName(String name, List<Recipe> recipes) {
         List<Recipe> results = new ArrayList<>();
         for (Recipe recipe : recipes) {
-            String nameT= recipe.getName();
+            String nameT = recipe.getName();
             if (nameT.toLowerCase().contains(name.toLowerCase())) {
                 results.add(recipe);
             }
@@ -112,8 +115,9 @@ public class Service {
         return results;
     }
 
-    public IdDTO addNewRecipe(RecipeDTO recipe) {
+    public IdDTO addNewRecipe(RecipeDTO recipe, String authorEmail) {
         Recipe savedRecipe = recipeDTOConverterToRecipe(recipe);
+        savedRecipe.setAuthorEmail(authorEmail);
 
         List<Direction> directions = new ArrayList<>();
         List<Ingredient> ingredients = new ArrayList<>();
@@ -137,21 +141,33 @@ public class Service {
 
     }
 
-    public boolean deleteById(int id) {
-        RecipeDTO recipeById = getRecipeById(id);
-        if (recipeById == null) {
-            return false;
-        }
-        recipeRepository.deleteById(id);
-        return true;
-    }
-
-    public RecipeDTO updateRecipe(int id, RecipeDTO recipe) {
+    public UpdateDeleteStatus deleteById(int id, String authorEmail) {
+        //RecipeDTO recipeById = getRecipeById(id);
         Optional<Recipe> optionalRecipe = recipeRepository.findById(id);
+
         if (optionalRecipe.isEmpty()) {
-            return null;
+            return RECIPE_NOT_FOUND;
         }
         Recipe targetedRecipe = optionalRecipe.get();
+        if (authorEmail.equalsIgnoreCase(targetedRecipe.getAuthorEmail())){
+            recipeRepository.deleteById(id);
+            return SUCCEEDED;
+        }
+
+       return UNAUTHORIZED;
+    }
+
+    public UpdateDeleteStatus updateRecipe(int id, RecipeDTO recipe, String authorEmail) {
+        Optional<Recipe> optionalRecipe = recipeRepository.findById(id);
+        if (optionalRecipe.isEmpty()) {
+            return RECIPE_NOT_FOUND;
+        }
+
+        Recipe targetedRecipe = optionalRecipe.get();
+
+        if (!authorEmail.equalsIgnoreCase(targetedRecipe.getAuthorEmail())) {
+            return UNAUTHORIZED;
+        }
 
         targetedRecipe.setCategory(recipe.getCategory());
         targetedRecipe.setDescription(recipe.getDescription());
@@ -178,108 +194,9 @@ public class Service {
         targetedRecipe.setIngredients(ingredients);
 
         targetedRecipe = recipeRepository.save(targetedRecipe);
-        return recipeConverterToDTO(targetedRecipe);
+        return SUCCEEDED;
     }
 
-    @Transactional
-    public RecipeDTO updateRecipe1(int id, RecipeDTO newRecipeDTO) {
-        System.out.println("id : " + id);
-        System.out.println(newRecipeDTO.getIngredients());
-        RecipeDTO oldRecipeDTO = getRecipeById(id);
-        if (oldRecipeDTO == null) {
-            return null;
-        }
-        newRecipeDTO.setDate(LocalDateTime.now());
-        Recipe newRecipe = recipeDTOConverterToRecipe(newRecipeDTO);
-        newRecipe.setId(id);
-
-        Iterable<Ingredient> tempIngredients = ingredientRepository.findAll();
-        List<Ingredient> oldIngredient = new ArrayList<>();
-        tempIngredients.forEach((value) -> {
-            System.out.println("test");
-            if (value.getRecipe().getId() == id) {
-                System.out.println();
-                oldIngredient.add(value);
-            }
-        });
-
-        for (Ingredient ingredient : oldIngredient) {
-            boolean check = false;
-            for (String newIngredient : newRecipeDTO.getIngredients()) {
-                System.out.println("1");
-                if (newIngredient.equals(ingredient.getName())) {
-                    check = true;
-                    System.out.println("2");
-                }
-                System.out.println("3");
-                // System.out.println("new ingredient: " + newIngredient + ", check: " + check + ", ingredient: " + ingredient);
-            }
-            System.out.println("4");
-            if (!check) {
-
-                ingredientRepository.delete(ingredient);
-
-
-            }
-            System.out.println("5");
-
-        }
-
-
-        /*for (String ingredient : oldRecipeDTO.getIngredients()) {
-            boolean check = false;
-            for (String newIngredient : newRecipeDTO.getIngredients()) {
-                if (newIngredient.equals(ingredient)) {
-                    check = true;
-                }
-                System.out.println("new ingredient: " + newIngredient + ", check: " + check + ", ingredient: " + ingredient);
-            }
-            if (!check) {
-//                System.out.println("deleted: " + ingredient);
-                deleteIngredientByNameAndRecipeId(ingredient, id);
-
-
-            }
-//            if (!newRecipeDTO.getIngredients().contains(ingredient)) {
-//                System.out.println("i am here");
-//
-//
-//               Integer ingredientId  = ingredientRepository.getByNameAndRecipeId(ingredient, id);
-//                System.out.println(ingredientId);
-//                ingredientRepository.deleteById(ingredientId);
-//            }
-        }
-*/
-        for (String ingredient : newRecipeDTO.getIngredients()) {
-            if (!oldRecipeDTO.getIngredients().contains(ingredient)) {
-                Ingredient newIngredient = new Ingredient();
-                newIngredient.setName(ingredient);
-                newIngredient.setRecipe(newRecipe);
-                ingredientRepository.save(newIngredient);
-            }
-        }
-
-        for (String direction : oldRecipeDTO.getDirections()) {
-            if (!newRecipeDTO.getIngredients().contains(direction)) {
-//todo:org.hibernate.hql.internal.QueryExecutionRequestException: Not supported for DML operations [delete From recipes.Ingredient where name = ?1 and recipe_id = ?2]
-                directionRepository.deleteByName(direction);
-            }
-        }
-
-
-        for (String direction : newRecipeDTO.getDirections()) {
-            if (!oldRecipeDTO.getDirections().contains(direction)) {
-                Direction newDirection = new Direction();
-                newDirection.setName(direction);
-                newDirection.setRecipe(newRecipe);
-                directionRepository.save(newDirection);
-            }
-        }
-
-        recipeRepository.save(newRecipe);
-
-        return newRecipeDTO;
-    }
 
     @Transactional
     public void deleteIngredientByNameAndRecipeId(String name, int id) {
